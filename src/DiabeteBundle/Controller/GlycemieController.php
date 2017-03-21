@@ -4,8 +4,9 @@ namespace DiabeteBundle\Controller;
 
 use DiabeteBundle\Entity\Glycemie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Glycemie controller.
@@ -69,7 +70,7 @@ class GlycemieController extends Controller {
         'form' => $form->createView(),
       )
     );
-  }
+    }
 
   /**
    * Finds and displays a glycemie entity.
@@ -136,7 +137,7 @@ class GlycemieController extends Controller {
         'delete_form' => $deleteForm->createView(),
       )
     );
-  }
+    }
 
   /**
    * Deletes a glycemie entity.
@@ -155,7 +156,9 @@ class GlycemieController extends Controller {
     }
 
     return $this->redirectToRoute('glycemie_index');
-  }
+    }
+
+
 
 
   /*
