@@ -1,0 +1,11 @@
+diabete_glycemie:
+    resource: "@DiabeteBundle/Controller/GlycemieController.php"
+    type:     annotation
+
+diabete:
+    resource: "@DiabeteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

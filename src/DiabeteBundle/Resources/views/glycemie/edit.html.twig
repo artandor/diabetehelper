@@ -1,0 +1,30 @@
+{% extends 'DiabeteBundle::layout.html.twig' %}
+
+{% block title %}
+    Modifier glycémie {{ parent() }}
+{% endblock title %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('glycemie_index') }}">Glycémies</a></li>
+    <li><a href="{{ path('glycemie_new') }}">Modifier Glycémie</a></li>
+{% endblock breadcrumb %}
+
+{% block body %}
+    <h1>Modifier une glycémie</h1>
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <p>
+        <input class="btn btn-success" type="submit" value="Valider la modification"/>
+        {{ form_end(edit_form) }}
+
+        <a class="btn btn-warning" href="{{ path('glycemie_index') }}">Annuler les modifications</a>
+    </p>
+    <p>
+        {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Supprimer la glycémie">
+        {{ form_end(delete_form) }}
+    </p>
+
+{% endblock %}

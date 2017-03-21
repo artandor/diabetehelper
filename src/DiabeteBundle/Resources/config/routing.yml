@@ -1,0 +1,7 @@
+diabete_homepage:
+    path:     /
+    defaults: { _controller: DiabeteBundle:Default:index }
+
+statistiques:
+    path:     /stats/
+    defaults: { _controller: DiabeteBundle:Statistiques:index }
