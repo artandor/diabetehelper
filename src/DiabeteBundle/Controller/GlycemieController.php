@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Glycemie controller.
  *
- * @Route("glycemie")
+ * @Route("{_locale}/glycemie")
  */
 class GlycemieController extends Controller {
   /**

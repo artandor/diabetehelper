@@ -330,7 +330,7 @@ class RequirementCollection implements IteratorAggregate {
    */
   public function all() {
     return $this->requirements;
-  }
+    }
 
   /**
    * Returns all mandatory requirements.
@@ -346,7 +346,7 @@ class RequirementCollection implements IteratorAggregate {
     }
 
     return $array;
-  }
+    }
 
   /**
    * Returns the mandatory requirements that were not met.
@@ -362,7 +362,7 @@ class RequirementCollection implements IteratorAggregate {
     }
 
     return $array;
-  }
+    }
 
   /**
    * Returns all optional recommendations.
@@ -378,7 +378,7 @@ class RequirementCollection implements IteratorAggregate {
     }
 
     return $array;
-  }
+    }
 
   /**
    * Returns the recommendations that were not met.
@@ -394,7 +394,7 @@ class RequirementCollection implements IteratorAggregate {
     }
 
     return $array;
-  }
+    }
 
   /**
    * Returns whether a php.ini configuration is not correct.
@@ -511,7 +511,7 @@ class SymfonyRequirements extends RequirementCollection {
         'date.timezone setting must be set',
         'Set the "<strong>date.timezone</strong>" setting in php.ini<a href="#phpini">*</a> (like Europe/Paris).'
       );
-    }
+        }
 
     if (FALSE !== $requiredPhpVersion && version_compare(
         $installedPhpVersion,
@@ -560,17 +560,17 @@ class SymfonyRequirements extends RequirementCollection {
       'Install and enable the <strong>ctype</strong> extension.'
     );
 
-    $this->addRequirement(
-      function_exists('token_get_all'),
-      'token_get_all() must be available',
-      'Install and enable the <strong>Tokenizer</strong> extension.'
-    );
+        $this->addRequirement(
+          function_exists('token_get_all'),
+          'token_get_all() must be available',
+          'Install and enable the <strong>Tokenizer</strong> extension.'
+        );
 
-    $this->addRequirement(
-      function_exists('simplexml_import_dom'),
-      'simplexml_import_dom() must be available',
-      'Install and enable the <strong>SimpleXML</strong> extension.'
-    );
+        $this->addRequirement(
+          function_exists('simplexml_import_dom'),
+          'simplexml_import_dom() must be available',
+          'Install and enable the <strong>SimpleXML</strong> extension.'
+        );
 
     if (function_exists('apc_store') && ini_get('apc.enabled')) {
       if (version_compare($installedPhpVersion, '5.4.0', '>=')) {
@@ -673,13 +673,13 @@ class SymfonyRequirements extends RequirementCollection {
       version_compare($installedPhpVersion, '5.3.4', '>='),
       'You should use at least PHP 5.3.4 due to PHP bug #52083 in earlier versions',
       'Your project might malfunction randomly due to PHP bug #52083 ("Notice: Trying to get property of non-object"). Install PHP 5.3.4 or newer.'
-    );
+        );
 
     $this->addRecommendation(
       version_compare($installedPhpVersion, '5.3.8', '>='),
       'When using annotations you should have at least PHP 5.3.8 due to PHP bug #55156',
       'Install PHP 5.3.8 or newer if your project uses annotations.'
-    );
+        );
 
     $this->addRecommendation(
       version_compare($installedPhpVersion, '5.4.0', '!='),
@@ -840,11 +840,11 @@ class SymfonyRequirements extends RequirementCollection {
       ||
       (extension_loaded('wincache') && ini_get('wincache.ocenabled'));
 
-    $this->addRecommendation(
-      $accelerator,
-      'a PHP accelerator should be installed',
-      'Install and/or enable a <strong>PHP accelerator</strong> (highly recommended).'
-    );
+        $this->addRecommendation(
+          $accelerator,
+          'a PHP accelerator should be installed',
+          'Install and/or enable a <strong>PHP accelerator</strong> (highly recommended).'
+        );
 
     if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
       $this->addRecommendation(
@@ -852,7 +852,7 @@ class SymfonyRequirements extends RequirementCollection {
         'realpath_cache_size should be at least 5M in php.ini',
         'Setting "<strong>realpath_cache_size</strong>" to e.g. "<strong>5242880</strong>" or "<strong>5M</strong>" in php.ini<a href="#phpini">*</a> may improve performance on Windows significantly in some cases.'
       );
-    }
+        }
 
     $this->addPhpIniRecommendation('short_open_tag', FALSE);
 
@@ -902,7 +902,7 @@ class SymfonyRequirements extends RequirementCollection {
     }
 
     return FALSE;
-  }
+    }
 
   /**
    * Loads realpath_cache_size from php.ini and converts it to int.
@@ -914,7 +914,11 @@ class SymfonyRequirements extends RequirementCollection {
   protected function getRealpathCacheSize() {
     $size = ini_get('realpath_cache_size');
     $size = trim($size);
-    $unit = strtolower(substr($size, -1, 1));
+    $unit = '';
+    if (!ctype_digit($size)) {
+      $unit = strtolower(substr($size, -1, 1));
+      $size = (int) substr($size, 0, -1);
+    }
     switch ($unit) {
       case 'g':
         return $size * 1024 * 1024 * 1024;
@@ -925,5 +929,5 @@ class SymfonyRequirements extends RequirementCollection {
       default:
         return (int) $size;
     }
-  }
+    }
 }
