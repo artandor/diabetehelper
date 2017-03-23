@@ -4,7 +4,7 @@ diabete_glycemie:
 
 diabete:
     resource: "@DiabeteBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    prefix:   /{_locale}
     requirements:
       _locale: en|fr
 

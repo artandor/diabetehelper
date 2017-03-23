@@ -26,7 +26,7 @@ class GlycemieType extends AbstractType {
         NumberType::class,
         array(
           'attr' => array(
-            'placeholder' => 'Votre glycemie en g/L (i.e. : 1.15 g/L)',
+            'placeholder' => $this->get('translator')->trans('Your blood sugar level in g/L (i.e. : 1.15 g/L)'),
           ),
           'required' => TRUE,
         )
