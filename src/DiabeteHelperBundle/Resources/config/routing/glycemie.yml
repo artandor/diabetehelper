@@ -1,0 +1,24 @@
+glycemie_index:
+    path:     /
+    defaults: { _controller: "DiabeteHelperBundle:Glycemie:index" }
+    methods:  GET
+
+glycemie_show:
+    path:     /{idGlycemie}/show
+    defaults: { _controller: "DiabeteHelperBundle:Glycemie:show" }
+    methods:  GET
+
+glycemie_new:
+    path:     /new
+    defaults: { _controller: "DiabeteHelperBundle:Glycemie:new" }
+    methods:  [GET, POST]
+
+glycemie_edit:
+    path:     /{idGlycemie}/edit
+    defaults: { _controller: "DiabeteHelperBundle:Glycemie:edit" }
+    methods:  [GET, POST]
+
+glycemie_delete:
+    path:     /{idGlycemie}/delete
+    defaults: { _controller: "DiabeteHelperBundle:Glycemie:delete" }
+    methods:  DELETE

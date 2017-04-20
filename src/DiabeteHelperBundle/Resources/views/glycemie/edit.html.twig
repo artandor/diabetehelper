@@ -1,0 +1,30 @@
+{% extends 'DiabeteHelperBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ 'Change blood sugar'|trans }} {{ parent() }}
+{% endblock title %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('glycemie_index') }}">{{ 'Blood Sugar'|trans }}</a></li>
+    <li><a href="{{ path('glycemie_new') }}">{{ 'Change blood sugar'|trans }}</a></li>
+{% endblock breadcrumb %}
+
+{% block body %}
+    <h1>{{ 'Change a blood sugar level'|trans }}</h1>
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <p>
+        <input class="btn btn-success" type="submit" value="{{ 'Submit changes'|trans }}"/>
+        {{ form_end(edit_form) }}
+
+        <a class="btn btn-warning" href="{{ path('glycemie_index') }}">{{ 'Cancel changes'|trans }}</a>
+    </p>
+    <p>
+        {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="{{ 'Delete this glycemia'|trans }}">
+        {{ form_end(delete_form) }}
+    </p>
+
+{% endblock %}

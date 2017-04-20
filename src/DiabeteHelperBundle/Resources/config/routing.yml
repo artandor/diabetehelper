@@ -1,0 +1,7 @@
+diabete_helper_glycemie:
+    resource: "@DiabeteHelperBundle/Resources/config/routing/glycemie.yml"
+    prefix:   /glycemie
+
+diabete_helper_homepage:
+    path:     /
+    defaults: { _controller: DiabeteHelperBundle:Default:index }
