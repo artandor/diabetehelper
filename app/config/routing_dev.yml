@@ -16,4 +16,4 @@ _main:
 JMSTranslationBundle_ui:
     resource: '@JMSTranslationBundle/Controller/'
     type:     annotation
-    prefix:   /{_locale}/_trans
+    prefix:   /{_locale}/admin/_trans

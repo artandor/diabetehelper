@@ -1,0 +1,3 @@
+
+Extraire traduction
+php bin/console translation:extract fr --bundle=DiabeteHelperBundle --output-dir=./app/Resources/translations

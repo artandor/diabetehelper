@@ -1,226 +1,361 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns:jms="urn:jms:translation" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-    <file date="2017-03-24T01:07:21Z" source-language="en" target-language="fr" datatype="plaintext"
-          original="not.available">
-        <header>
-            <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
-            <note>The source node in most cases contains the sample message as written by the developer. If it looks
-                like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a
-                default message.
-            </note>
-        </header>
-        <body>
-            <trans-unit id="00c30f85342bf56088b09dc0b0d798b183ba9f48" resname="A+">
-                <source>A+</source>
-                <target>A+</target>
-                <jms:reference-file line="28">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="1a6a3baa60990f601b340b07ecccc1672c3cca03" resname="A-">
-                <source>A-</source>
-                <target>A-</target>
-                <jms:reference-file line="29">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="840a0c5c523215f0cd7a8077065fc6351a040f97" resname="AB+">
-                <source>AB+</source>
-                <target>AB+</target>
-                <jms:reference-file line="32">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="bcb341c039b09bf92e8e4ac8cdeaedb963aff577" resname="AB-">
-                <source>AB-</source>
-                <target>AB-</target>
-                <jms:reference-file line="33">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="a96ddd562d17c0ce477825adcff2ef5c3f14c3b3" resname="B+">
-                <source>B+</source>
-                <target>B+</target>
-                <jms:reference-file line="30">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="abc080aa3bf046f53cb2e1ccca56b2c5a19ee3dc" resname="B-">
-                <source>B-</source>
-                <target>B-</target>
-                <jms:reference-file line="31">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="ca46acdb7b38dce587a00590e39c098bfe9a55fe" resname="Blood Sugar">
-                <source>Blood Sugar</source>
-                <target>Glycémie</target>
-                <jms:reference-file line="9">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="c44664656813db902066d2cf77be3c4bc978d0e2" resname="Cancel changes">
-                <source>Cancel changes</source>
-                <target>Annuler changements</target>
-                <jms:reference-file line="22">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="6adfbaab743fac3490b1a620db2209e5789f4fd3" resname="Change a blood sugar level">
-                <source>Change a blood sugar level</source>
-                <target>Modifier une glycémie</target>
-                <jms:reference-file line="14">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="4330ac52d24eb6ce5f833e45f50f5d9a8e733f28" resname="Change blood sugar">
-                <source>Change blood sugar</source>
-                <target>Modifier glycémie</target>
-                <jms:reference-file line="10">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig
-                </jms:reference-file>
-                <jms:reference-file line="4">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="bf6ef9498d4ae3405efecb111917e2183b0d0521" resname="Delete this glycemia">
-                <source>Delete this glycemia</source>
-                <target>Supprimer cette glycémie</target>
-                <jms:reference-file line="26">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="70f8bb9a8a5393ef080507a89e4b98d139000d65" resname="Home">
-                <source>Home</source>
-                <target>Accueil</target>
-                <jms:reference-file line="3">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\defaults\index.html.twig
-                </jms:reference-file>
-                <jms:reference-file line="13">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\layout.html.twig\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="199efdb03f8cdd75ce4ad9cdc5b910c42c3e50e7" resname="O+">
-                <source>O+</source>
-                <target>O+</target>
-                <jms:reference-file line="34">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="087209e5839944a4a79b55df8937989565d047f7" resname="O-">
-                <source>O-</source>
-                <target>O-</target>
-                <jms:reference-file line="35">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="1ee83eafa3a066b35b06786dd1d0f74a28c23bc5" resname="Submit changes">
-                <source>Submit changes</source>
-                <target>Valider les modifications</target>
-                <jms:reference-file line="19">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="66700a551d922be6141a31fd3488720a025e5a12" resname="The % of your last hb1c">
-                <source>The % of your last hb1c</source>
-                <target>% de votre dernière hb1c</target>
-                <jms:reference-file line="17">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="39">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="3bedc4b03b74acba6866093ab4ddfa5822a8e221" resname="The date you did your last Hb1c">
-                <source>The date you did your last Hb1c</source>
-                <target>Date de votre dernière hb1c</target>
-                <jms:reference-file line="21">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="43">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="515440618056de00cc677d9b3893b1f13e349322" resname="The type of diabete you have">
-                <source>The type of diabete you have</source>
-                <target>Le type de diabète que vous avez</target>
-                <jms:reference-file line="27">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="49">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="8cbd82338fb9d17182332b74cdf936db1d897e46" resname="The year of your birth">
-                <source>The year of your birth</source>
-                <target>Année de naissance</target>
-                <jms:reference-file line="15">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="19">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="ba1cd0dd35f6a6e39ecc6466449de54f3deb7e8f" resname="Type 1">
-                <source>Type 1</source>
-                <target>Type 1</target>
-                <jms:reference-file line="29">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="51">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="153b0cf733c2bc21b66756006f033a7d62847b93" resname="Type 2">
-                <source>Type 2</source>
-                <target>Type 2</target>
-                <jms:reference-file line="30">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="52">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="977c3837489c2ac7579a70333b226781cf2c1afc" resname="What traitements do you take">
-                <source>What traitements do you take</source>
-                <target>Quels traitements prenez vous</target>
-                <jms:reference-file line="37">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="59">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="35bc47577a58119f24d24668690c90920a18ded8" resname="Your blood type">
-                <source>Your blood type</source>
-                <target>Votre groupe sanguin</target>
-                <jms:reference-file line="16">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="26">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="d18ec514be9f6f5560a1d29ca2b80ac16deae24b" resname="Your height">
-                <source>Your height</source>
-                <target>Votre taille</target>
-                <jms:reference-file line="14">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="14">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-            <trans-unit id="e66a875773902c7c2546e647a80504690bc283b6" resname="Your weight">
-                <source>Your weight</source>
-                <target>Votre poids</target>
-                <jms:reference-file line="13">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\ProfileChangeType.php\
-                </jms:reference-file>
-                <jms:reference-file line="13">
-                    \..\..\..\..\..\C:/xampp/htdocs/diabetehelper/app/../src\DiabeteHelperBundle\Form\RegistrationType.php\
-                </jms:reference-file>
-            </trans-unit>
-        </body>
-    </file>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-04-22T16:35:03Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="da39a3ee5e6b4b0d3255bfef95601890afd80709" resname="">
+        <source></source>
+        <target></target>
+        <jms:reference-file line="28">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c985c9680c5cee498bc7d1ae2c17b16180f48ac7" resname="            Accompaniment website for diabetics allowing you to store you blood sugar levels and others important&#10;            informations about your diabete, and get a lot of statistic in order to have a better view on your results,&#10;            and ideas about how to improve your treatment.&#10;&#10;            You'll also find all you need about your food, since an insulinotherapy part is coming soon.&#10;            ">
+        <source xml:space="preserve">            Accompaniment website for diabetics allowing you to store you blood sugar levels and others important
+            informations about your diabete, and get a lot of statistic in order to have a better view on your results,
+            and ideas about how to improve your treatment.
+
+            You'll also find all you need about your food, since an insulinotherapy part is coming soon.
+            </source>
+        <target xml:space="preserve">            Accompaniment website for diabetics allowing you to store you blood sugar levels and others important
+            informations about your diabete, and get a lot of statistic in order to have a better view on your results,
+            and ideas about how to improve your treatment.
+
+            You'll also find all you need about your food, since an insulinotherapy part is coming soon.
+            </target>
+        <jms:reference-file line="19">\..\src\DiabeteHelperBundle\Resources\views\defaults\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="38f6d7875e3195bdaee448d2cb6917f3ae4994af" resname="0.0">
+        <source>0.0</source>
+        <target state="new">0.0</target>
+        <jms:reference-file line="37">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0292c852b8f31bd0bbfa1c76ab95f622b742dbcd" resname="A community forum">
+        <source>A community forum</source>
+        <target>Un forum communautaire</target>
+        <jms:reference-file line="32">\..\src\DiabeteHelperBundle\Resources\views\defaults\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="00c30f85342bf56088b09dc0b0d798b183ba9f48" resname="A+">
+        <source>A+</source>
+        <target>A+</target>
+        <jms:reference-file line="29">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1a6a3baa60990f601b340b07ecccc1672c3cca03" resname="A-">
+        <source>A-</source>
+        <target>A-</target>
+        <jms:reference-file line="30">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="840a0c5c523215f0cd7a8077065fc6351a040f97" resname="AB+">
+        <source>AB+</source>
+        <target>AB+</target>
+        <jms:reference-file line="33">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcb341c039b09bf92e8e4ac8cdeaedb963aff577" resname="AB-">
+        <source>AB-</source>
+        <target>AB-</target>
+        <jms:reference-file line="34">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c0509b08c9253743c3a4d2ebf95805cd17829329" resname="Acetone level">
+        <source>Acetone level</source>
+        <target>Taux d'acétone</target>
+        <jms:reference-file line="35">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+        <jms:reference-file line="106">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c3cd636a585b20c40ac2df5ffb403e83cb2eef51" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+        <jms:reference-file line="28">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="db078ee2af22e69fab40ad511cfd6cd47f3b027f" resname="Add a new glycemia">
+        <source>Add a new glycemia</source>
+        <target>Ajouter une glycémie</target>
+        <jms:reference-file line="16">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a96ddd562d17c0ce477825adcff2ef5c3f14c3b3" resname="B+">
+        <source>B+</source>
+        <target>B+</target>
+        <jms:reference-file line="31">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="abc080aa3bf046f53cb2e1ccca56b2c5a19ee3dc" resname="B-">
+        <source>B-</source>
+        <target>B-</target>
+        <jms:reference-file line="32">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2758dfea00d286e8f6ad3ddbea81377ae401c190" resname="Before/after">
+        <source>Before/after</source>
+        <target>Avant/après</target>
+        <jms:reference-file line="26">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ca46acdb7b38dce587a00590e39c098bfe9a55fe" resname="Blood Sugar">
+        <source>Blood Sugar</source>
+        <target>Glycémie</target>
+        <jms:reference-file line="9">\..\src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="83637f5313cc854e933ce343aacdff8c6694af31" resname="Blood sugar level">
+        <source>Blood sugar level</source>
+        <target>Taux glycémique</target>
+        <jms:reference-file line="24">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+        <jms:reference-file line="119">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9523031bbfb6ea5647141bd566bc8de8f7c8a31f" resname="Blood sugar levels">
+        <source>Blood sugar levels</source>
+        <target>Taux glycémiques</target>
+        <jms:reference-file line="4">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="27920351601ca5b0e6ab9215cd8078395006b8f2" resname="Blood sugar levels list">
+        <source>Blood sugar levels list</source>
+        <target>Liste des glycémies</target>
+        <jms:reference-file line="18">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c44664656813db902066d2cf77be3c4bc978d0e2" resname="Cancel changes">
+        <source>Cancel changes</source>
+        <target>Annuler changements</target>
+        <jms:reference-file line="22">\..\src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6adfbaab743fac3490b1a620db2209e5789f4fd3" resname="Change a blood sugar level">
+        <source>Change a blood sugar level</source>
+        <target>Modifier une glycémie</target>
+        <jms:reference-file line="14">\..\src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4330ac52d24eb6ce5f833e45f50f5d9a8e733f28" resname="Change blood sugar">
+        <source>Change blood sugar</source>
+        <target>Modifier glycémie</target>
+        <jms:reference-file line="10">\..\src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">\..\src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bbfa773e5a63a5ea58c9b6207e608ca0120e592a" resname="Close">
+        <source>Close</source>
+        <target>Fermer</target>
+        <jms:reference-file line="84">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2bc8ff4a320aff7a681c533b5cfea93c7378f19a" resname="Date start">
+        <source>Date start</source>
+        <target>Date début</target>
+        <jms:reference-file line="20">\..\src\DiabeteHelperBundle\Form\StatistiquesDatesType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1ad3fd38e21e5b65a8c126e99850bd12a28d02c" resname="Date/hour of">
+        <source>Date/hour of</source>
+        <target>Date/heure de</target>
+        <jms:reference-file line="46">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+        <jms:reference-file line="23">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf6ef9498d4ae3405efecb111917e2183b0d0521" resname="Delete this glycemia">
+        <source>Delete this glycemia</source>
+        <target>Supprimer cette glycémie</target>
+        <jms:reference-file line="26">\..\src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87146b002eea3f51cd6307abcf588186e334b587" resname="Easy stats about your blood sugar levels">
+        <source>Easy stats about your blood sugar levels</source>
+        <target>Des statistiques accessibles sur vos glycémies</target>
+        <jms:reference-file line="30">\..\src\DiabeteHelperBundle\Resources\views\defaults\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7f2f6a15cf8da2b27e5a4af47b58e7ad71c0b3d9" resname="Error">
+        <source>Error</source>
+        <target>Erreur</target>
+        <jms:reference-file line="79">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3e561a14c55700aa5805d27d73c8c73dc10c1926" resname="Glycemia">
+        <source>Glycemia</source>
+        <target>Glycémie</target>
+        <jms:reference-file line="24">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70f8bb9a8a5393ef080507a89e4b98d139000d65" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+        <jms:reference-file line="4">\..\src\DiabeteHelperBundle\Resources\views\defaults\index.html.twig</jms:reference-file>
+        <jms:reference-file line="13">\..\src\DiabeteHelperBundle\Resources\views\layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c75df419da10e5880af9fc5be8d5c8a9e6e15831" resname="Mobile datas : find your stats anywhere (mobile, computer, tablets, ...)">
+        <source>Mobile datas : find your stats anywhere (mobile, computer, tablets, ...)</source>
+        <target>Mobile datas : find your stats anywhere (mobile, computer, tablets, ...)</target>
+        <jms:reference-file line="31">\..\src\DiabeteHelperBundle\Resources\views\defaults\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9fe408e12dc6ee8d44c87b38b82ff435c397a441" resname="Modify">
+        <source>Modify</source>
+        <target>Modifier</target>
+        <jms:reference-file line="56">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6baa33714236ba4785d9f0adbf306ed730e8b478" resname="Moment of the blood sugar level">
+        <source>Moment of the blood sugar level</source>
+        <target>Moment de la glycémie</target>
+        <jms:reference-file line="109">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c924e3088204ee77ba681f72be3444357932fca" resname="Note">
+        <source>Note</source>
+        <target>Remarque</target>
+        <jms:reference-file line="115">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="199efdb03f8cdd75ce4ad9cdc5b910c42c3e50e7" resname="O+">
+        <source>O+</source>
+        <target>O+</target>
+        <jms:reference-file line="35">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="087209e5839944a4a79b55df8937989565d047f7" resname="O-">
+        <source>O-</source>
+        <target>O-</target>
+        <jms:reference-file line="36">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fd7847161e4a9ae9a0f45f5f9f49979c80b8d713" resname="Physical activity">
+        <source>Physical activity</source>
+        <target>Activité physique</target>
+        <jms:reference-file line="74">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+        <jms:reference-file line="112">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+        <jms:reference-file line="27">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b03499212cc7c6f4ff3d91c4e06540b890d8c241" resname="Secured data">
+        <source>Secured data</source>
+        <target>Données sécurisées</target>
+        <jms:reference-file line="33">\..\src\DiabeteHelperBundle\Resources\views\defaults\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d97d1ee339e4eeaba8cac91dca37c8b4ec8f5501" resname="Show">
+        <source>Show</source>
+        <target>Afficher</target>
+        <jms:reference-file line="54">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1ee83eafa3a066b35b06786dd1d0f74a28c23bc5" resname="Submit changes">
+        <source>Submit changes</source>
+        <target>Valider les modifications</target>
+        <jms:reference-file line="19">\..\src\DiabeteHelperBundle\Resources\views\glycemie\edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66700a551d922be6141a31fd3488720a025e5a12" resname="The % of your last hb1c">
+        <source>The % of your last hb1c</source>
+        <target>% de votre dernière hb1c</target>
+        <jms:reference-file line="17">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="40">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3bedc4b03b74acba6866093ab4ddfa5822a8e221" resname="The date you did your last Hb1c">
+        <source>The date you did your last Hb1c</source>
+        <target>Date de votre dernière hb1c</target>
+        <jms:reference-file line="21">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="44">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="515440618056de00cc677d9b3893b1f13e349322" resname="The type of diabete you have">
+        <source>The type of diabete you have</source>
+        <target>Le type de diabète que vous avez</target>
+        <jms:reference-file line="27">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="50">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8cbd82338fb9d17182332b74cdf936db1d897e46" resname="The year of your birth">
+        <source>The year of your birth</source>
+        <target>Année de naissance</target>
+        <jms:reference-file line="15">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="19">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ba1cd0dd35f6a6e39ecc6466449de54f3deb7e8f" resname="Type 1">
+        <source>Type 1</source>
+        <target>Type 1</target>
+        <jms:reference-file line="29">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="52">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="153b0cf733c2bc21b66756006f033a7d62847b93" resname="Type 2">
+        <source>Type 2</source>
+        <target>Type 2</target>
+        <jms:reference-file line="30">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="53">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="977c3837489c2ac7579a70333b226781cf2c1afc" resname="What traitements do you take">
+        <source>What traitements do you take</source>
+        <target>Quels traitements prenez vous</target>
+        <jms:reference-file line="37">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="60">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9d05b983550b276b4255f0f38eaa3e796ff7368e" resname="Your blood sugar level in g/L (i.e. : 1.15 g/L)">
+        <source>Your blood sugar level in g/L (i.e. : 1.15 g/L)</source>
+        <target>Your blood sugar level in g/L (i.e. : 1.15 g/L)</target>
+        <jms:reference-file line="26">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="35bc47577a58119f24d24668690c90920a18ded8" resname="Your blood type">
+        <source>Your blood type</source>
+        <target>Votre groupe sanguin</target>
+        <jms:reference-file line="16">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="26">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d18ec514be9f6f5560a1d29ca2b80ac16deae24b" resname="Your height">
+        <source>Your height</source>
+        <target>Votre taille</target>
+        <jms:reference-file line="14">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="14">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e66a875773902c7c2546e647a80504690bc283b6" resname="Your weight">
+        <source>Your weight</source>
+        <target>Votre poids</target>
+        <jms:reference-file line="13">\..\src\DiabeteHelperBundle\Form\ProfileChangeType.php</jms:reference-file>
+        <jms:reference-file line="13">\..\src\DiabeteHelperBundle\Form\RegistrationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="525f99a3cbb3db55e0a14c53c2b49afc855298a3" resname="blood sugar level done after meal">
+        <source>blood sugar level done after meal</source>
+        <target state="new">blood sugar level done after meal</target>
+        <jms:reference-file line="58">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a63ef9e18d445d7d227942c5eb757cb65159fcdd" resname="blood sugar level done before meal">
+        <source>blood sugar level done before meal</source>
+        <target state="new">blood sugar level done before meal</target>
+        <jms:reference-file line="57">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7e85183c21f800c0290d27f5c832b77e70a59045" resname="heavy">
+        <source>heavy</source>
+        <target state="new">heavy</target>
+        <jms:reference-file line="72">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63b0cd11ee33f9baa5fa39903455f4dac007de77" resname="heavy activity (musculation, run, ...)">
+        <source>heavy activity (musculation, run, ...)</source>
+        <target state="new">heavy activity (musculation, run, ...)</target>
+        <jms:reference-file line="72">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dfccc06f14414bff5a59be7fc90abf4404b47fc8" resname="light">
+        <source>light</source>
+        <target state="new">light</target>
+        <jms:reference-file line="70">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de92ee0a26a9701a8d13432962d928b202360d22" resname="light activity (walk, ...)">
+        <source>light activity (walk, ...)</source>
+        <target state="new">light activity (walk, ...)</target>
+        <jms:reference-file line="70">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8504d96b1782466c221d0b3f29795046ae478e17" resname="meal">
+        <source>meal</source>
+        <target>repas</target>
+        <jms:reference-file line="55">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+        <jms:reference-file line="26">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="20af418657698863db8d966f4b42ed8dc7d0bd54" resname="medium">
+        <source>medium</source>
+        <target state="new">medium</target>
+        <jms:reference-file line="71">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5cc494c35cf34ac4c67e2d4af4ea43b677a8c99f" resname="medium activity (fast walk, easy sport, ...">
+        <source>medium activity (fast walk, easy sport, ...</source>
+        <target state="new">medium activity (fast walk, easy sport, ...</target>
+        <jms:reference-file line="71">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e52af56cde9cf7c96b2dc1762aa4d380601b7a28" resname="no activity">
+        <source>no activity</source>
+        <target state="new">no activity</target>
+        <jms:reference-file line="77">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c51048b7325d60e326d19a9cfbeff2577be1672e" resname="note">
+        <source>note</source>
+        <target state="new">note</target>
+        <jms:reference-file line="85">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2cf27ab5d5854e8225bb396ef55ef3d9e3d3fa30" resname="on an empty stomach">
+        <source>on an empty stomach</source>
+        <target state="new">on an empty stomach</target>
+        <jms:reference-file line="59">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="65d6df1d9de405df4953e579b5244138f4b9b5e7" resname="the blood sugar test">
+        <source>the blood sugar test</source>
+        <target>la glycemie</target>
+        <jms:reference-file line="46">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+        <jms:reference-file line="23">\..\src\DiabeteHelperBundle\Resources\views\glycemie\index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="751ee7f8f5c2927f93caaa87d83eded3bba14131" resname="when did you do the blood sugar test ?">
+        <source>when did you do the blood sugar test ?</source>
+        <target state="new">when did you do the blood sugar test ?</target>
+        <jms:reference-file line="61">\..\src\DiabeteHelperBundle\Form\GlycemieType.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

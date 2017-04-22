@@ -1,7 +1,7 @@
 {% extends 'DiabeteHelperBundle::layout.html.twig' %}
 
 {% block title %}
-    Glycémies {{ parent() }}
+    {{ 'Blood sugar levels'|trans }} {{ parent() }}
 {% endblock title %}
 
 {% block breadcrumb %}
@@ -13,19 +13,19 @@
 {% block body %}
 
 
-    <a class="btn btn-success" href="{{ path('glycemie_new') }}">Ajouter une nouvelle glycémie</a>
+    <a class="btn btn-success" href="{{ path('glycemie_new') }}">{{ 'Add a new glycemia'|trans }}</a>
 
-    <h1>Liste des glycémies</h1>
+    <h1>{{ 'Blood sugar levels list'|trans }}</h1>
 
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Date/heure de<br/>la glycemie</th>
-            <th>Taux de la<br/>glycemie</th>
-            <th>Taux acetone</th>
-            <th>Temps par rapport<br/> au repas</th>
-            <th>Activité physique</th>
-            <th>Actions</th>
+            <th>{{ 'Date/hour of'|trans }}<br/>{{ 'the blood sugar test'|trans }}</th>
+            <th>{{ 'Glycemia'|trans }}</th>
+            <th>{{ 'Acetone level'|trans }}</th>
+            <th>{{ 'Before/after'|trans }}<br/>{{ 'meal'|trans }}</th>
+            <th>{{ 'Physical activity'|trans }}</th>
+            <th>{{ 'Actions'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -51,9 +51,9 @@
                             data-repas="{{ glycemie.repas }}"
                             data-activite="{{ glycemie.activite }}"
                             data-remarque="{{ glycemie.remarque }}"
-                    >Afficher
+                    >{{ 'Show'|trans }}
                     </button>
-                    <a class="btn btn-default" href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">Modifier</a>
+                    <a class="btn btn-default" href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">{{ 'Modify'|trans }}</a>
                 </td>
             </tr>
         {% endfor %}
@@ -76,12 +76,12 @@
                 <div class="modal-header" id="showGlycemieHeader">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="showGlycemieTitle" style="text-align: center">Erreur</h4>
+                    <h4 class="modal-title" id="showGlycemieTitle" style="text-align: center">{{ 'Error'|trans }}</h4>
                 </div>
                 <div class="modal-body" id="showGlycemieBody">
                 </div>
                 <div class="modal-footer" id="showGlycemieFooter">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'Close'|trans }}</button>
                 </div>
             </div>
         </div>
@@ -103,20 +103,20 @@
                 tauxGlycemie = tauxGlycemie + ' g/L'
             }
             if (tauxAcetone != '') {
-                tauxAcetone = 'Taux d\'acétone : ' + tauxAcetone + ' g/L'
+                tauxAcetone = '{{ 'Acetone level'|trans }} : ' + tauxAcetone + ' g/L'
             }
             if (repas != '') {
-                repas = '<br/>Moment de la glycémie par rapport au repas : ' + repas
+                repas = '<br/>{{ 'Moment of the blood sugar level'|trans }} : ' + repas
             }
             if (activite) {
-                activite = '<br/>Activité physique avant / après glycémie : ' + activite
+                activite = '<br/>{{ 'Physical activity'|trans }} : ' + activite
             }
             if (remarque) {
-                remarque = '<br/>Remarque : ' + remarque
+                remarque = '<br/>{{ 'Note'|trans }} : ' + remarque
             }
 
             document.getElementById('showGlycemieTitle').innerHTML = 'Glycémie du ' + dateGlycemie;
-            document.getElementById('showGlycemieBody').innerHTML = '<p> Taux de la glycémie : ' + tauxGlycemie +
+            document.getElementById('showGlycemieBody').innerHTML = '<p> {{ 'Blood sugar level'|trans }} : ' + tauxGlycemie +
                     '<br/>' + tauxAcetone +
                     '<br/>' + repas +
                     activite +
