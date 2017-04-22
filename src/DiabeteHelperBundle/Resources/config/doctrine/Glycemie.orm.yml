@@ -1,0 +1,68 @@
+DiabeteHelperBundle\Entity\Glycemie:
+    type: entity
+    repositoryClass: DiabeteHelperBundle\Repository\GlycemieRepository
+    table:  glycemies
+    indexes:
+        FK_user_id:
+            columns:
+                - iduser
+    id:
+        idGlycemie:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idGlycemie
+            generator:
+                strategy: IDENTITY
+
+    fields:
+        tauxGlycemie:
+            type: decimal
+            nullable: false
+            precision:  10
+            scale:  2
+            column: tauxGlycemie
+        tauxAcetone:
+            type: decimal
+            nullable: true
+            precision:  10
+            scale:  2
+            column: tauxAcetone
+        dateGlycemie:
+            type: datetime
+            nullable: false
+            options:
+                default:  null
+            column: dateGlycemie
+        repas:
+            type: string
+            nullable: true
+            length: 50
+            column: repas
+        activite:
+            type: string
+            nullable: true
+            length: 50
+            column: activite
+        remarque:
+            type: string
+            nullable: true
+            length: 500
+            column: remarque
+
+
+    manyToOne:
+        iduser:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: id
+            inversedBy: null
+            joinColumns:
+                iduser:
+                    referencedColumnName: id
+            orphanRemoval: false
+
+    lifecycleCallbacks: {  }

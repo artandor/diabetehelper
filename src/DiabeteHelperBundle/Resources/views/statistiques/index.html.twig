@@ -1,0 +1,26 @@
+{% extends 'DiabeteHelperBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ 'statistics'|trans|capitalize }} {{ parent() }}
+{% endblock title %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('statistiques') }}">{{ 'statistics'|trans|capitalize }}</a></li>
+{% endblock breadcrumb %}
+
+{% block body %}
+
+    {{ form(form) }}
+    {% if linechart is defined %}
+        <div id="div_chart" style="max-width: inherit"></div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            {{ gc_draw(linechart, 'div_chart') }}
+        </script>
+    {% else %}
+        <p>{{ 'No glycemia in the selected date range.'|trans }}</p>
+    {% endif %}
+
+
+{% endblock body %}

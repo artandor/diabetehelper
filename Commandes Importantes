@@ -1,0 +1,3 @@
+
+Extraire traduction et vider cache
+php bin/console translation:extract en --config=app --output-format=xliff && php bin/console translation:extract fr --config=app --output-format=xliff && php bin/console ca:cl

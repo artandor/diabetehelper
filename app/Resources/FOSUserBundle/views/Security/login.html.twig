@@ -1,0 +1,9 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ 'sign in'|trans|capitalize }} - DiabHelper
+{% endblock title %}
+
+{% block fos_user_content %}
+    {{ include('FOSUserBundle:Security:login_content.html.twig') }}
+{% endblock fos_user_content %}

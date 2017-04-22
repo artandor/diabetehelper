@@ -1,0 +1,55 @@
+{% extends 'DiabeteHelperBundle::layout.html.twig' %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('glycemie_index') }}">{{ 'glycemias'|trans|capitalize }}</a></li>
+
+{% endblock breadcrumb %}
+
+{% block title %}
+    {{ 'show glycemia'|trans|capitalize }} {{ parent() }}
+{% endblock title %}
+
+{% block body %}
+    <h1>{{ 'glycemia'|trans|capitalize }}</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>{{ 'blood sugar level'|trans|capitalize }}</th>
+            <td>{{ glycemie.tauxGlycemie }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'acetone level'|trans|capitalize }}</th>
+            <td>{{ glycemie.tauxAcetone }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'date of glycemia'|trans|capitalize }}</th>
+            <td>{% if glycemie.dateGlycemie %}{{ glycemie.dateGlycemie|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>{{ 'meal'|trans|capitalize }}</th>
+            <td>{{ glycemie.repas }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'physical activity'|trans|capitalize }}</th>
+            <td>{{ glycemie.activite }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'note'|trans|capitalize }}</th>
+            <td>{{ glycemie.remarque }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a class='btn btn-default' href="{{ path('glycemie_index') }}">{{ 'back to glycemia index'|trans|capitalize }}</a>
+
+        <a class="btn btn-warning" href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">{{ 'modify'|trans|capitalize }}</a>
+    </p>
+    <p>
+        {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="{{ 'remove glycemia'|trans|capitalize }}">
+        {{ form_end(delete_form) }}
+    </p>
+
+{% endblock %}

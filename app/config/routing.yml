@@ -1,0 +1,7 @@
+diabete:
+    resource: "@DiabeteHelperBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix: /{_locale}
