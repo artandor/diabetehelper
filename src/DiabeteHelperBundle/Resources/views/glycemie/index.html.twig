@@ -42,7 +42,7 @@
                 <td>{{ glycemie.repas }}</td>
                 <td>{{ glycemie.activite|capitalize }}</td>
                 <td class="btn-group-vertical" role="group" aria-label="...">
-                    {#<a class="btn btn-default" href="{{ path('glycemie_show', { 'id': glycemie.idGlycemie }) }}">Afficher</a>#}
+                    {#<a class="btn btn-default" href="{{ path('glycemie_show', { 'idGlycemie': glycemie.idGlycemie }) }}">Afficher</a>#}
                     <button type="button" class="btn btn-default" id="{{ glycemie.idGlycemie }}"
                             onclick="showGlycemieModal(id)" data-toggle="modal" data-target="#showGlycemie"
                             data-dateGlycemie="{{ glycemie.dateGlycemie|date('d/M/Y H:i') }}"
@@ -53,7 +53,7 @@
                             data-remarque="{{ glycemie.remarque }}"
                     >Afficher
                     </button>
-                    <a class="btn btn-default" href="{{ path('glycemie_edit', { 'id': glycemie.idGlycemie }) }}">Modifier</a>
+                    <a class="btn btn-default" href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">Modifier</a>
                 </td>
             </tr>
         {% endfor %}

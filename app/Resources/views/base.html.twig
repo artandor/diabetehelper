@@ -54,11 +54,11 @@
                                     Glycémies</a></li>
                         {% endif %}
                         {% if app.request.attributes.get('_route') == 'statistiques' %}
-                            <li class="active"><a href="{# path('statistiques') #}"><span
+                            <li class="active"><a href="{{  path('statistiques') }}"><span
                                             class="glyphicon glyphicon-stats"></span> Statistiques <span
                                             class="sr-only">(current)</span></a></li>
                         {% else %}
-                            <li><a href="{# path('statistiques') #}"><span class="glyphicon glyphicon-stats"></span>
+                            <li><a href="{{ path('statistiques') }}"><span class="glyphicon glyphicon-stats"></span>
                                     Statistiques</a></li>
                         {% endif %}
                     </ul>

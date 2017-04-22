@@ -48,7 +48,7 @@
     <p>
         <a class='btn btn-default' href="{{ path('glycemie_index') }}">Retour à l'index des glycémies</a>
 
-        <a class="btn btn-warning" href="{{ path('glycemie_edit', { 'id': glycemie.idGlycemie }) }}">Modifier</a>
+        <a class="btn btn-warning" href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">Modifier</a>
     </p>
     <p>
         {{ form_start(delete_form) }}

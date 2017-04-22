@@ -1,5 +1,6 @@
 DiabeteHelperBundle\Entity\Glycemie:
     type: entity
+    repositoryClass: DiabeteHelperBundle\Repository\GlycemieRepository
     table:  glycemies
     indexes:
         FK_user_id:

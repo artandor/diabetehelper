@@ -20,6 +20,7 @@ class GlycemieController extends Controller {
 
     $glycemies = $em->getRepository('DiabeteHelperBundle:Glycemie')->findAll();
 
+
     return $this->render(
       '@DiabeteHelper/glycemie/index.html.twig',
       array(
@@ -33,6 +34,9 @@ class GlycemieController extends Controller {
    *
    */
   public function newAction(Request $request) {
+    //Permet de générer X glycémies contenant des glycémies entre 0.40 et 4.50, à des dates contenues dans les deux dernieres semaines
+    //$this->genererGlycemies(200);
+
     $glycemie = new Glycemie();
     $form = $this->createForm(
       'DiabeteHelperBundle\Form\GlycemieType',
@@ -42,12 +46,13 @@ class GlycemieController extends Controller {
 
     if ($form->isSubmitted() && $form->isValid()) {
       $em = $this->getDoctrine()->getManager();
+      $glycemie->setIduser($this->getUser());
       $em->persist($glycemie);
       $em->flush();
 
       return $this->redirectToRoute(
         'glycemie_show',
-        array('idGlycemie' => $glycemie->getIdglycemie())
+        array('idGlycemie' => $glycemie->getIdGlycemie())
       );
     }
 
@@ -89,7 +94,7 @@ class GlycemieController extends Controller {
       ->setAction(
         $this->generateUrl(
           'glycemie_delete',
-          array('idGlycemie' => $glycemie->getIdglycemie())
+          array('idGlycemie' => $glycemie->getIdGlycemie())
         )
       )
       ->setMethod('DELETE')
@@ -146,5 +151,36 @@ class GlycemieController extends Controller {
     }
 
     return $this->redirectToRoute('glycemie_index');
+  }
+
+  /*
+   * Peuplement des glycémies
+   */
+
+  private function genererGlycemies($quantite) {
+
+    $randomGlycemy = rand(40, 450) / 100;
+    $generatedGlycemy = new Glycemie();
+    $generatedGlycemy->setIduser($this->getUser());
+    $generatedGlycemy->setDateGlycemie(new \DateTime("now"));
+    $generatedGlycemy->setTauxGlycemie($randomGlycemy);
+
+    $em = $this->getDoctrine()->getManager();
+    $em->persist($generatedGlycemy);
+    $em->flush($generatedGlycemy);
+
+    for ($i = 1; $i <= $quantite; $i++) {
+      $randomGlycemy = rand(40, 450) / 100;
+      $randomDate = rand(1, 15);
+      $randomDate = '-' . $randomDate . ' day';
+      $generatedGlycemy = new Glycemie();
+      $generatedGlycemy->setIduser($this->getUser());
+      $generatedGlycemy->setDateGlycemie(new \DateTime($randomDate));
+      $generatedGlycemy->setTauxGlycemie($randomGlycemy);
+
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($generatedGlycemy);
+      $em->flush($generatedGlycemy);
+    }
   }
 }

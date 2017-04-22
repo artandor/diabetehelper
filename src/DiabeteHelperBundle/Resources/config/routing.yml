@@ -5,3 +5,7 @@ diabete_helper_glycemie:
 diabete_helper_homepage:
     path:     /
     defaults: { _controller: DiabeteHelperBundle:Default:index }
+
+statistiques:
+    path:     /stats/
+    defaults: { _controller: DiabeteHelperBundle:Statistiques:index }

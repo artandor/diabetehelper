@@ -5,6 +5,7 @@ namespace DiabeteHelperBundle\Entity;
 /**
  * Glycemie
  */
+
 class Glycemie {
   /**
    * @var integer
@@ -210,4 +211,3 @@ class Glycemie {
     return $this;
   }
 }
-
