@@ -1,31 +1,31 @@
 {% extends 'DiabeteHelperBundle::layout.html.twig' %}
 
 {% block title %}
-    {{ 'Blood sugar levels'|trans }} {{ parent() }}
+    {{ 'blood sugar levels'|trans|capitalize }} {{ parent() }}
 {% endblock title %}
 
 {% block breadcrumb %}
     {{ parent() }}
-    <li><a href="{{ path('glycemie_index') }}">Glycémies</a></li>
+    <li><a href="{{ path('glycemie_index') }}">{{ 'glycemias'|trans|capitalize }}</a></li>
 {% endblock breadcrumb %}
 
 
 {% block body %}
 
 
-    <a class="btn btn-success" href="{{ path('glycemie_new') }}">{{ 'Add a new glycemia'|trans }}</a>
+    <a class="btn btn-success" href="{{ path('glycemie_new') }}">{{ 'add a new glycemia'|trans|capitalize }}</a>
 
-    <h1>{{ 'Blood sugar levels list'|trans }}</h1>
+    <h1>{{ 'blood sugar levels list'|trans|capitalize }}</h1>
 
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>{{ 'Date/hour of'|trans }}<br/>{{ 'the blood sugar test'|trans }}</th>
-            <th>{{ 'Glycemia'|trans }}</th>
-            <th>{{ 'Acetone level'|trans }}</th>
-            <th>{{ 'Before/after'|trans }}<br/>{{ 'meal'|trans }}</th>
-            <th>{{ 'Physical activity'|trans }}</th>
-            <th>{{ 'Actions'|trans }}</th>
+            <th>{{ 'date/hour of'|trans|capitalize }}<br/>{{ 'the blood sugar test'|trans }}</th>
+            <th>{{ 'glycemia'|trans|capitalize }}</th>
+            <th>{{ 'acetone level'|trans|capitalize }}</th>
+            <th>{{ 'before/after'|trans|capitalize }}<br/>{{ 'meal'|trans }}</th>
+            <th>{{ 'physical activity'|trans|capitalize }}</th>
+            <th>{{ 'actions'|trans|capitalize }}</th>
         </tr>
         </thead>
         <tbody>
@@ -51,9 +51,9 @@
                             data-repas="{{ glycemie.repas }}"
                             data-activite="{{ glycemie.activite }}"
                             data-remarque="{{ glycemie.remarque }}"
-                    >{{ 'Show'|trans }}
+                    >{{ 'show'|trans|capitalize }}
                     </button>
-                    <a class="btn btn-default" href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">{{ 'Modify'|trans }}</a>
+                    <a class="btn btn-default" href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">{{ 'modify'|trans|capitalize }}</a>
                 </td>
             </tr>
         {% endfor %}
@@ -76,12 +76,12 @@
                 <div class="modal-header" id="showGlycemieHeader">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="showGlycemieTitle" style="text-align: center">{{ 'Error'|trans }}</h4>
+                    <h4 class="modal-title" id="showGlycemieTitle" style="text-align: center">{{ 'error'|trans|capitalize }}</h4>
                 </div>
                 <div class="modal-body" id="showGlycemieBody">
                 </div>
                 <div class="modal-footer" id="showGlycemieFooter">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'Close'|trans }}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'close'|trans|capitalize }}</button>
                 </div>
             </div>
         </div>
@@ -103,16 +103,16 @@
                 tauxGlycemie = tauxGlycemie + ' g/L'
             }
             if (tauxAcetone != '') {
-                tauxAcetone = '{{ 'Acetone level'|trans }} : ' + tauxAcetone + ' g/L'
+                tauxAcetone = '{{ 'acetone level'|trans|capitalize }} : ' + tauxAcetone + ' g/L'
             }
             if (repas != '') {
                 repas = '<br/>{{ 'Moment of the blood sugar level'|trans }} : ' + repas
             }
             if (activite) {
-                activite = '<br/>{{ 'Physical activity'|trans }} : ' + activite
+                activite = '<br/>{{ 'physical activity'|trans|capitalize }} : ' + activite
             }
             if (remarque) {
-                remarque = '<br/>{{ 'Note'|trans }} : ' + remarque
+                remarque = '<br/>{{ 'note'|trans }} : ' + remarque
             }
 
             document.getElementById('showGlycemieTitle').innerHTML = 'Glycémie du ' + dateGlycemie;

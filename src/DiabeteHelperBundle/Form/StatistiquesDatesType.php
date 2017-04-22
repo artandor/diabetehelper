@@ -4,6 +4,7 @@ namespace DiabeteHelperBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\MessageSelector;
@@ -26,10 +27,19 @@ class StatistiquesDatesType extends AbstractType {
         'dateEnd',
         DateTimeType::class,
         array(
+          'label' => ucfirst($translator->trans('Date end')),
           'data' => new \DateTime("now"),
           'date_format' => 'd M y',
         )
-      );
+      )
+      ->add(
+        'submit',
+        SubmitType::class,
+        array(
+          'label' => ucfirst($translator->trans('Submit'))
+        )
+      )
+    ;
   }
 
   public function configureOptions(OptionsResolver $resolver) {

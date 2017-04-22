@@ -21,9 +21,9 @@ class GlycemieType extends AbstractType {
       'tauxGlycemie',
       NumberType::class,
       array(
-        'label'=> $translator->trans('Blood sugar level'),
+        'label'=> ucfirst($translator->trans('blood sugar level')),
         'attr' => array(
-          'placeholder' => $translator->trans('Your blood sugar level in g/L (i.e. : 1.15 g/L)'),
+          'placeholder' => ucfirst($translator->trans('your blood sugar level in g/L (i.e. : 1.15 g/L)')),
         ),
         'required' => TRUE,
       )
@@ -32,7 +32,7 @@ class GlycemieType extends AbstractType {
         'tauxAcetone',
         NumberType::class,
         array(
-          'label'=> $translator->trans('Acetone level'),
+          'label'=> ucfirst($translator->trans('acetone level')),
           'attr' => array(
             'placeholder' => '0.0',
           ),
@@ -43,7 +43,7 @@ class GlycemieType extends AbstractType {
         'dateGlycemie',
         NULL,
         array(
-          'label'=> $translator->trans('Date/hour of').' '. $translator->trans('the blood sugar test'),
+          'label'=> ucfirst($translator->trans('date/hour of')).' '. $translator->trans('the blood sugar test'),
           'data' => new \DateTime("NOW"),
           'date_format' => 'd M y',
         )
@@ -71,7 +71,7 @@ class GlycemieType extends AbstractType {
             ucfirst($translator->trans('medium activity (fast walk, easy sport, ...')) => ucfirst($translator->trans('medium')),
             ucfirst($translator->trans('heavy activity (musculation, run, ...)')) => ucfirst($translator->trans('heavy')),
           ),
-          'label'=> ucfirst($translator->trans('Physical activity')),
+          'label'=> ucfirst($translator->trans('physical activity')),
           'expanded' => TRUE,
           'multiple' => FALSE,
           'placeholder' => ucfirst($translator->trans('no activity')),

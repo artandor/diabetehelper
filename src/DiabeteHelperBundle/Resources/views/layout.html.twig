@@ -10,5 +10,5 @@
 {% block breadcrumb %}
     <ol class="breadcrumb">
     {{ parent() }}
-    <li><a href="{{ path('diabete_helper_homepage') }}">{{ 'Home'|trans }}</a></li>
+    <li><a href="{{ path('diabete_helper_homepage') }}">{{ 'home'|trans|capitalize }}</a></li>
 {% endblock breadcrumb %}

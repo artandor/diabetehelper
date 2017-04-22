@@ -1,18 +1,18 @@
 {% extends 'DiabeteHelperBundle::layout.html.twig' %}
 
 {% block title %}
-    Ajouter glycémie {{ parent() }}
+    {{ 'add glycemia'|trans|capitalize }} {{ parent() }}
 {% endblock title %}
 
 {% block breadcrumb %}
     {{ parent() }}
-    <li><a href="{{ path('glycemie_index') }}">Glycémies</a></li>
-    <li><a href="{{ path('glycemie_new') }}">Ajouter Glycémie</a></li>
+    <li><a href="{{ path('glycemie_index') }}">{{ 'glycemias'|trans|capitalize }}</a></li>
+    <li><a href="{{ path('glycemie_new') }}">{{ 'add glycemia'|trans|capitalize }}</a></li>
 {% endblock breadcrumb %}
 
 
 {% block body %}
-    <h1>Ajout d'une glycémie</h1>
+    <h1>{{ 'add glycemia'|trans|capitalize }}</h1>
 
     {{ form_start(form) }}
     {{ form_widget(form) }}

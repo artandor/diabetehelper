@@ -6,38 +6,52 @@ namespace DiabeteHelperBundle\Controller;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\LineChart;
 use CMEN\GoogleChartsBundle\GoogleCharts\Options\VAxis;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\Translation\MessageSelector;
+use Symfony\Component\Translation\Translator;
+use Symfony\Component\HttpFoundation\Request;
 
 class StatistiquesController extends Controller {
-  public function indexAction() {
+  public function indexAction(Request $request) {
+    $renderParams = array();
     $form = $this->createForm(
       'DiabeteHelperBundle\Form\StatistiquesDatesType'
     );
+    $form->handleRequest($request);
 
-    $dateStart = new \DateTime('- 15 days');
-    $dateEnd = new \DateTime('now');
+
+    if ($request->request->get('statistiques_dates')){
+      $datesForm = $request->request->get('statistiques_dates');
+
+      $dateStartString = $datesForm['dateStart']['date']['year']. "/" . $datesForm['dateStart']['date']['month']. "/" . $datesForm['dateStart']['date']['day'];
+      $dateStart = \DateTime::createFromFormat('Y/m/d', $dateStartString);
+      $dateEndString = $datesForm['dateEnd']['date']['year']. "/" . $datesForm['dateEnd']['date']['month']. "/" . $datesForm['dateEnd']['date']['day'];
+      $dateEnd = \DateTime::createFromFormat('Y/m/d', $dateEndString);
+    }
+    else{
+      $dateStart = new \DateTime('- 15 days');
+      $dateEnd = new \DateTime('now');
+    }
+
+
 
     //Listing des glycémies de l'utilisateur connecté dans la fourchette de dates
     $em = $this->getDoctrine()->getManager();
     $glycemies = $em->getRepository('DiabeteHelperBundle:Glycemie')
       ->findGlycemiesByDates($dateStart, $dateEnd);
 
-    $donneesCourbe = $this->buildDatesArrayChart($dateStart, $dateEnd);
+    if (!empty($glycemies)){
+      $donneesCourbe = $this->buildDatesArrayChart($dateStart, $dateEnd);
 
-    $this->calculMoyennesGlycemiques($glycemies, $donneesCourbe);
+      $this->calculMoyennesGlycemiques($glycemies, $donneesCourbe);
 
-    $lineChart = $this->createLineChart($donneesCourbe, $dateStart, $dateEnd);
+      $lineChart = $this->createLineChart($donneesCourbe, $dateStart, $dateEnd);
+    }
 
-
-
+    $renderParams['form'] = $form->createView();
+    $renderParams['glycemies'] = $glycemies;
+    if(isset($lineChart)){$renderParams['linechart'] = $lineChart;};
     return $this->render(
-      'DiabeteHelperBundle:statistiques:index.html.twig',
-      array(
-        'glycemies' => $glycemies,
-        'linechart' => $lineChart,
-        'form' => $form->createView(),
-      )
-    );
+      'DiabeteHelperBundle:statistiques:index.html.twig', $renderParams);
   }
 
   private function buildDatesArrayChart($dateStart, $dateEnd) {
@@ -104,18 +118,19 @@ class StatistiquesController extends Controller {
   }
 
   private function createLineChart($donneesCourbe, $dateStart, $dateEnd){
+    $translator = new Translator('fr', new MessageSelector());
     $lineChart = new LineChart();
     $lineChart->getData()->setArrayToDataTable($donneesCourbe);
 
     $lineChart->getOptions()
-      ->setTitle('Moyenne glycémique du '. $dateStart->format('d/M/Y') .' au '. $dateEnd->format('d/M/Y'))
+      ->setTitle(ucfirst($translator->trans('glycemic mean curve from')).' '. $dateStart->format('d/M/Y') .' to '. $dateEnd->format('d/M/Y'))
       ->setWidth(1100)
       ->setHeight(500);
     $lineChart->getOptions()->setCurveType('function');
 
     $vAxisLeft = new VAxis();
     $vAxisLeft
-      ->setTitle('Taux glycémie (g/L)')
+      ->setTitle(ucfirst($translator->trans('blood sugar level')).' (g/L)')
       ->getViewWindow()->setMin(0.40);
 
 
@@ -152,7 +167,7 @@ class StatistiquesController extends Controller {
     $lineChart->getOptions()
       ->getHAxis()
       ->setFormat('d/M')
-      ->setTitle('Date')
+      ->setTitle(ucfirst($translator->trans('Date')))
       ->getGridlines()->setCount(15);
 
     $lineChart->getOptions()->setInterpolateNulls(FALSE);
