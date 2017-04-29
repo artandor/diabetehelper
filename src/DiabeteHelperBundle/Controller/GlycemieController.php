@@ -39,7 +39,7 @@ class GlycemieController extends Controller {
 
     $glycemie = new Glycemie();
     $form = $this->createForm(
-      'DiabeteHelperBundle\Form\GlycemieType',
+      'DiabeteHelperBundle\Form\TypeGlycemieType',
       $glycemie
     );
     $form->handleRequest($request);
@@ -110,7 +110,7 @@ class GlycemieController extends Controller {
   public function editAction(Request $request, Glycemie $glycemie) {
     $deleteForm = $this->createDeleteForm($glycemie);
     $editForm = $this->createForm(
-      'DiabeteHelperBundle\Form\GlycemieType',
+      'DiabeteHelperBundle\Form\Type\GlycemieType',
       $glycemie
     );
     $editForm->handleRequest($request);

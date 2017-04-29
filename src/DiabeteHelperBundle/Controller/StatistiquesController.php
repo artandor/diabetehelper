@@ -14,7 +14,7 @@ class StatistiquesController extends Controller {
   public function indexAction(Request $request) {
     $renderParams = array();
     $form = $this->createForm(
-      'DiabeteHelperBundle\Form\StatistiquesDatesType'
+      'DiabeteHelperBundle\Form\Type\StatistiquesDatesType'
     );
     $form->handleRequest($request);
 

@@ -1,7 +1,7 @@
 <?php
 // src/AppBundle/Form/ProfileChangeType.php
 
-namespace DiabeteHelperBundle\Form;
+namespace DiabeteHelperBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;

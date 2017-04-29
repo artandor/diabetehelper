@@ -103,10 +103,10 @@ fos_user:
                 address: register@diabetehelper.fr
                 sender_name: Register DiabeteHelper France
         form:
-            type: DiabeteHelperBundle\Form\RegistrationType
+            type: DiabeteHelperBundle\Form\Type\RegistrationType
     profile:
         form:
-            type: DiabeteHelperBundle\Form\ProfileChangeType
+            type: DiabeteHelperBundle\Form\Type\ProfileChangeType
 
 
 cmen_google_charts:

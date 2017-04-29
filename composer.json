@@ -2,6 +2,7 @@
   "name": "artandor/diabetehelper",
   "license": "proprietary",
   "type": "project",
+  "description": "DiabeteHelper, a website to assist people with their diabete, from web or  mobile support",
   "autoload": {
     "psr-4": {
       "": "src/"
