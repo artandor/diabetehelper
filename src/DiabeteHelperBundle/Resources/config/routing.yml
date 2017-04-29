@@ -1,7 +1,6 @@
 diabete_helper_glycemie:
     resource: "@DiabeteHelperBundle/Resources/config/routing/glycemie.yml"
     prefix:   /glycemie
-    methods:  GET
 
 diabete_helper_homepage:
     path:     /

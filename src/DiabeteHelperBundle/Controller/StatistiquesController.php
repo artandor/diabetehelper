@@ -65,7 +65,6 @@ class StatistiquesController extends Controller {
     );
     $diff = $dateEnd->diff($dateStart)->d;
     $stockDateStart = clone $dateStart;
-    //dump($diff);
     for ($i = 0; $i < $diff; $i++) {
       //dump($dateStart->modify('+ '. $i .' day'));
       $data[$stockDateStart->modify('+1 day')->format('d/M')] = array(
@@ -111,9 +110,7 @@ class StatistiquesController extends Controller {
         $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['coef']++;
       }
     }
-    //dump($moyennes);
     foreach ($moyennes as $key2 => $taux) {
-      //dump($taux);
       $destinationDatas[$taux['dateGlycemie']][1] = floatval($taux['tauxGlycemie']);
     }
   }
