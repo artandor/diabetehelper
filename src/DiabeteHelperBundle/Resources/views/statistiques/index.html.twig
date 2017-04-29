@@ -10,16 +10,20 @@
 {% endblock breadcrumb %}
 
 {% block body %}
-
-    {{ form(form) }}
-    {% if linechart is defined %}
-        <div id="div_chart" style="max-width: inherit"></div>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            {{ gc_draw(linechart, 'div_chart') }}
-        </script>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ form(form) }}
+        {% if linechart is defined %}
+            <div id="div_chart" style="max-width: inherit"></div>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                {{ gc_draw(linechart, 'div_chart') }}
+            </script>
+        {% else %}
+            <p>{{ 'No glycemia in the selected date range.'|trans }}</p>
+        {% endif %}
     {% else %}
-        <p>{{ 'No glycemia in the selected date range.'|trans }}</p>
+        <p>{{ 'you must be connected to access your stats.'|trans|capitalize }}</p>
+        <p><a href="{{ path('fos_user_security_login') }}">Go to login page</a></p>
     {% endif %}
 
 

@@ -10,7 +10,7 @@ namespace DiabeteHelperBundle\Repository;
  */
 class GlycemieRepository extends \Doctrine\ORM\EntityRepository
 {
-  public function findGlycemiesByDates($dateStart = NULL, $dateEnd = NULL, $idUser = 1)
+  public function findGlycemiesByDates($dateStart = NULL, $dateEnd = NULL, $idUser = NULL)
   {
     //dump($dateStart, $dateEnd);
     return $this->getEntityManager()

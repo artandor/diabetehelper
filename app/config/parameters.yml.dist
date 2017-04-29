@@ -17,4 +17,4 @@ parameters:
     mailer_password: domy59n0reply
 
     # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            c42ed44ec03668834d52bc546a01104f2ecdadd9

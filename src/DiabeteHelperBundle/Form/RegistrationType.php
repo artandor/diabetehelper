@@ -24,8 +24,8 @@ class RegistrationType extends AbstractType {
         ChoiceType::class,
         array(
           'label' => 'Your blood type',
+          'placeholder' => 'Choose your blood type',
           'choices' => array(
-            '' => NULL,
             'A+' => 'A+',
             'A-' => 'A-',
             'B+' => 'B+',

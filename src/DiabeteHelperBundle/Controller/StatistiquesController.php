@@ -32,12 +32,13 @@ class StatistiquesController extends Controller {
       $dateEnd = new \DateTime('now');
     }
 
-
-
     //Listing des glycémies de l'utilisateur connecté dans la fourchette de dates
-    $em = $this->getDoctrine()->getManager();
-    $glycemies = $em->getRepository('DiabeteHelperBundle:Glycemie')
-      ->findGlycemiesByDates($dateStart, $dateEnd);
+    if ($this->getUser()){
+      $em = $this->getDoctrine()->getManager();
+      $glycemies = $em->getRepository('DiabeteHelperBundle:Glycemie')
+        ->findGlycemiesByDates($dateStart, $dateEnd, $this->getUser()->getId());
+    }
+    else $glycemies = NULL;
 
     if (!empty($glycemies)){
       $donneesCourbe = $this->buildDatesArrayChart($dateStart, $dateEnd);
