@@ -5,6 +5,7 @@ namespace DiabeteHelperBundle\Controller;
 use DiabeteHelperBundle\Entity\Glycemie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Glycemie controller.
@@ -18,14 +19,16 @@ class GlycemieController extends Controller {
   public function indexAction() {
     $em = $this->getDoctrine()->getManager();
 
-    $glycemies = $em->getRepository('DiabeteHelperBundle:Glycemie')->findAll();
+    ($this->getUser()) ? $glycemies = $em->getRepository(
+      'DiabeteHelperBundle:Glycemie'
+    )->findByIduser($this->getUser()->getId()) : NULL;
 
 
+    $renderParams = array();
+    isset($glycemies) ? $renderParams['glycemies'] = $glycemies : NULL;
     return $this->render(
       '@DiabeteHelper/glycemie/index.html.twig',
-      array(
-        'glycemies' => $glycemies,
-      )
+      $renderParams
     );
   }
 
@@ -34,12 +37,17 @@ class GlycemieController extends Controller {
    *
    */
   public function newAction(Request $request) {
+    $this->denyAccessUnlessGranted(
+      'ROLE_USER',
+      NULL,
+      'You must be connected to access this page.'
+    );
     //Permet de générer X glycémies contenant des glycémies entre 0.40 et 4.50, à des dates contenues dans les deux dernieres semaines
     //$this->genererGlycemies(200);
 
     $glycemie = new Glycemie();
     $form = $this->createForm(
-      'DiabeteHelperBundle\Form\TypeGlycemieType',
+      'DiabeteHelperBundle\Form\Type\GlycemieType',
       $glycemie
     );
     $form->handleRequest($request);
@@ -72,6 +80,15 @@ class GlycemieController extends Controller {
    */
   public function showAction(Glycemie $glycemie) {
     $deleteForm = $this->createDeleteForm($glycemie);
+    $this->denyAccessUnlessGranted(
+      'ROLE_USER',
+      NULL,
+      'You must be connected to access this page.'
+    );
+
+    if (!$this->isGranted('edit', $glycemie)) {
+      throw new NotFoundHttpException("Page not found");
+    }
 
     return $this->render(
       '@DiabeteHelper/glycemie/show.html.twig',
@@ -108,12 +125,22 @@ class GlycemieController extends Controller {
    * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
    */
   public function editAction(Request $request, Glycemie $glycemie) {
+    $this->denyAccessUnlessGranted(
+      'ROLE_USER',
+      NULL,
+      'You must be connected to access this page.'
+    );
+
     $deleteForm = $this->createDeleteForm($glycemie);
     $editForm = $this->createForm(
       'DiabeteHelperBundle\Form\Type\GlycemieType',
       $glycemie
     );
     $editForm->handleRequest($request);
+
+    if (!$this->isGranted('edit', $glycemie)) {
+      throw new NotFoundHttpException("Page not found");
+    }
 
     if ($editForm->isSubmitted() && $editForm->isValid()) {
       $this->getDoctrine()->getManager()->flush();

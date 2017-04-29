@@ -1,0 +1,17 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ 'page not found'|trans|capitalize }} - DiabHelper
+{% endblock title %}
+
+{% block body %}
+    <div class="alert alert-danger" role="alert">
+        <p style="text-align: center; font-size: 6em;">¯\_(ツ)_/¯</p>
+        <p>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            {{ 'Page not found. Checkout for any URL
+        misspelling. If you think this page should be available, please contact the webmaster.'|trans }}
+        </p>
+    </div>
+{% endblock body %}

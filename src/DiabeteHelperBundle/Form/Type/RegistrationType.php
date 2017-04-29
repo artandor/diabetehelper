@@ -35,6 +35,7 @@ class RegistrationType extends AbstractType {
             'O+' => 'O+',
             'O-' => 'O-',
           ),
+          'required' => FALSE,
         )
       )
       ->add('lastHb1c', NULL, array('label' => 'The % of your last hb1c'))
