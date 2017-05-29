@@ -10,4 +10,4 @@ diabete_helper_homepage:
 statistiques:
     path:     /stats/
     defaults: { _controller: DiabeteHelperBundle:Statistiques:index }
-    methods:  GET
+    methods:  [GET, POST]

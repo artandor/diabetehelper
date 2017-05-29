@@ -1,6 +1,7 @@
 diabete:
     resource: "@DiabeteHelperBundle/Resources/config/routing.yml"
     prefix:   /{_locale}
+    defaults: { _locale: '%kernel.default_locale%' }
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
