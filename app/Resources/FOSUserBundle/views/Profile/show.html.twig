@@ -5,16 +5,19 @@
 
     <p>
     <h3>General informations</h3>
-    Your weight : {{ user.weight }}<br/>
-    Your height : {{ user.height }}<br/>
-
-    {% set age = "now"|date("Y") - user.yearofbirth %}
-    Your age (only with your year of birth) : {{ age }}<br/>
-    Your blood type : {{ user.bloodtype }}<br/>
+    {{ 'your weight'|trans|capitalize }} : {{ user.weight }}<br/>
+    {{ 'Your height'|trans|capitalize }} : {{ user.height }}<br/>
+    {% if user.yearofbirth is not null %}
+        {% set age = "now"|date("Y") - user.yearofbirth %}
+        {{ 'your age'|trans|capitalize }} : {{ age }}<br/>
+    {% endif %}
+    {{ 'your blood type'|trans|capitalize }} : {{ user.bloodtype }}<br/>
 
     <h3>Diabete informations</h3>
-    Your last Hb1c result : {{ user.lastHb1c }}<br/>
-    The date of your last Hb1c exam : {{ user.lastHb1cdate|date("M/d/Y") }}<br/>
+    {{ 'your last Hb1c result'|trans|capitalize }} : {{ user.lastHb1c }}<br/>
+    {% if user.lastHb1cdate is not null %}
+        The date of your last Hb1c exam : {{ user.lastHb1cdate|date("M/d/Y") }}<br/>
+    {% endif %}
     Diabete Type : {{ user.typeDiabete }}<br/>
     Traitement Type : {{ user.typeTraitement }}
     </p>

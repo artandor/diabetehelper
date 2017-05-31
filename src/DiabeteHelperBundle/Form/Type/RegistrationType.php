@@ -5,6 +5,7 @@ namespace DiabeteHelperBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class RegistrationType extends AbstractType {
@@ -14,8 +15,10 @@ class RegistrationType extends AbstractType {
       ->add('height', NULL, array('label' => 'Your height'))
       ->add(
         'yearofbirth',
-        NULL,
+        DateType::class,
         array(
+          'widget' => 'single_text',
+          'required' => FALSE,
           'label' => 'The year of your birth',
         )
       )
@@ -49,6 +52,7 @@ class RegistrationType extends AbstractType {
         ChoiceType::class,
         array(
           'label' => 'The type of diabete you have',
+          'placeholder' => 'Choose your diabete type',
           'choices' => array(
             'Type 1' => 1,
             'Type 2' => 2,

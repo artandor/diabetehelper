@@ -21,7 +21,7 @@ class GlycemieController extends Controller {
 
     ($this->getUser()) ? $glycemies = $em->getRepository(
       'DiabeteHelperBundle:Glycemie'
-    )->findByIduser($this->getUser()->getId()) : NULL;
+    )->findByIduser($this->getUser()->getId(), array('dateGlycemie' => 'DESC')) : NULL;
 
 
     $renderParams = array();

@@ -34,11 +34,11 @@ class User extends BaseUser {
 
 
   /**
-   * @var integer
+   * @var \DateTime
    *
    * @ORM\Column(name="yearOfBirth", type="int", nullable=true)
    */
-  private $yearofbirth;
+  private $yearofbirth = NULL;
 
   /**
    * @var string
