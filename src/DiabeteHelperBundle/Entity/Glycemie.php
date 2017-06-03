@@ -46,7 +46,10 @@ class Glycemie {
    * @var \DiabeteHelperBundle\Entity\User
    */
   private $iduser;
-
+  /**
+   * @var string
+   */
+  private $estimatedCorrectionBolus;
 
   /**
    * Get idGlycemie
@@ -55,28 +58,6 @@ class Glycemie {
    */
   public function getIdGlycemie() {
     return $this->idGlycemie;
-  }
-
-  /**
-   * Get tauxGlycemie
-   *
-   * @return string
-   */
-  public function getTauxGlycemie() {
-    return $this->tauxGlycemie;
-  }
-
-  /**
-   * Set tauxGlycemie
-   *
-   * @param string $tauxGlycemie
-   *
-   * @return Glycemie
-   */
-  public function setTauxGlycemie($tauxGlycemie) {
-    $this->tauxGlycemie = $tauxGlycemie;
-
-    return $this;
   }
 
   /**
@@ -190,6 +171,43 @@ class Glycemie {
   }
 
   /**
+   * Get estimatedCorrectionBolus
+   *
+   * @return string
+   */
+  public function getEstimatedCorrectionBolus() {
+    return $this->estimatedCorrectionBolus;
+  }
+
+  /**
+   * Set estimatedCorrectionBolus
+   *
+   * @param \DiabeteHelperBundle\Entity\User $user
+   *
+   * @return \DiabeteHelperBundle\Entity\Glycemie
+   */
+  public function setEstimatedCorrectionBolus(User $user = NULL) {
+    if ($user == NULL) {
+      $user = $this->getIduser();
+    }
+    if ($user->getGlycemicObjective() && $user->getInsulinSensivity()) {
+      if ($this->getTauxGlycemie() - $user->getGlycemicObjective() >= 0) {
+        $estimatedCorrectionBolus = ($this->getTauxGlycemie(
+            ) - $user->getGlycemicObjective()) / $user->getInsulinSensivity();
+      }
+      else {
+        $estimatedCorrectionBolus = 0;
+      }
+    }
+    else {
+      $estimatedCorrectionBolus = NULL;
+    }
+    $this->estimatedCorrectionBolus = $estimatedCorrectionBolus;
+
+    return $this;
+  }
+
+  /**
    * Get iduser
    *
    * @return \DiabeteHelperBundle\Entity\User
@@ -205,8 +223,30 @@ class Glycemie {
    *
    * @return Glycemie
    */
-  public function setIduser(\DiabeteHelperBundle\Entity\User $iduser = NULL) {
+  public function setIduser(User $iduser = NULL) {
     $this->iduser = $iduser;
+
+    return $this;
+  }
+
+  /**
+   * Get tauxGlycemie
+   *
+   * @return string
+   */
+  public function getTauxGlycemie() {
+    return $this->tauxGlycemie;
+  }
+
+  /**
+   * Set tauxGlycemie
+   *
+   * @param string $tauxGlycemie
+   *
+   * @return Glycemie
+   */
+  public function setTauxGlycemie($tauxGlycemie) {
+    $this->tauxGlycemie = $tauxGlycemie;
 
     return $this;
   }

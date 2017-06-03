@@ -34,14 +34,14 @@ class User extends BaseUser {
 
 
   /**
-   * @var integer
+   * @var \DateTime
    *
    * @ORM\Column(name="yearOfBirth", type="int", nullable=true)
    */
-  private $yearofbirth;
+  private $yearofbirth = NULL;
 
   /**
-   * @var string
+   * @var \DateTime
    *
    * @ORM\Column(name="bloodType", type="string", length=10, nullable=true)
    */
@@ -83,12 +83,18 @@ class User extends BaseUser {
    * @ORM\Column(name="dateInscription", type="datetime", nullable=true)
    */
   private $dateInscription;
-
+  /**
+   * @var string
+   */
+  private $insulinSensivity;
+  /**
+   * @var string
+   */
+  private $glycemicObjective;
 
   public function __construct() {
     parent::__construct();
   }
-
 
   /**
    * @return float
@@ -223,5 +229,47 @@ class User extends BaseUser {
     return $this->id;
   }
 
+  /**
+   * Get insulinSensivity
+   *
+   * @return string
+   */
+  public function getInsulinSensivity() {
+    return $this->insulinSensivity;
+  }
 
+  /**
+   * Set insulinSensivity
+   *
+   * @param string $insulinSensivity
+   *
+   * @return User
+   */
+  public function setInsulinSensivity($insulinSensivity) {
+    $this->insulinSensivity = $insulinSensivity;
+
+    return $this;
+  }
+
+  /**
+   * Get glycemicObjective
+   *
+   * @return string
+   */
+  public function getGlycemicObjective() {
+    return $this->glycemicObjective;
+  }
+
+  /**
+   * Set glycemicObjective
+   *
+   * @param string $glycemicObjective
+   *
+   * @return User
+   */
+  public function setGlycemicObjective($glycemicObjective) {
+    $this->glycemicObjective = $glycemicObjective;
+
+    return $this;
+  }
 }

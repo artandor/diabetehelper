@@ -12,7 +12,6 @@
 
 {% block body %}
     <h1>{{ 'glycemia'|trans|capitalize }}</h1>
-
     <table>
         <tbody>
         <tr>
@@ -38,6 +37,10 @@
         <tr>
             <th>{{ 'note'|trans|capitalize }}</th>
             <td>{{ glycemie.remarque }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'correction bolus'|trans|capitalize }}</th>
+            <td>{{ glycemie.estimatedCorrectionBolus }}</td>
         </tr>
         </tbody>
     </table>
