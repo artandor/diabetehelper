@@ -21,7 +21,7 @@ class GlycemieController extends Controller {
 
     ($this->getUser()) ? $glycemies = $em->getRepository(
       'DiabeteHelperBundle:Glycemie'
-    )->findByIduser($this->getUser()->getId()) : NULL;
+    )->findByIduser($this->getUser()->getId(), array('dateGlycemie' => 'DESC')) : NULL;
 
 
     $renderParams = array();
@@ -55,6 +55,7 @@ class GlycemieController extends Controller {
     if ($form->isSubmitted() && $form->isValid()) {
       $em = $this->getDoctrine()->getManager();
       $glycemie->setIduser($this->getUser());
+      $glycemie->setEstimatedCorrectionBolus();
       $em->persist($glycemie);
       $em->flush();
 
@@ -143,6 +144,7 @@ class GlycemieController extends Controller {
     }
 
     if ($editForm->isSubmitted() && $editForm->isValid()) {
+      $glycemie->setEstimatedCorrectionBolus();
       $this->getDoctrine()->getManager()->flush();
 
       return $this->redirectToRoute(

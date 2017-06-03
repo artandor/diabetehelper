@@ -5,17 +5,35 @@ namespace DiabeteHelperBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class RegistrationType extends AbstractType {
   public function buildForm(FormBuilderInterface $builder, array $options) {
     $builder
-      ->add('weight', NULL, array('label' => 'Your weight'))
-      ->add('height', NULL, array('label' => 'Your height'))
+      ->add(
+        'weight',
+        NumberType::class,
+        array(
+          'label' => 'Your weight',
+          'required' => FALSE,
+        )
+      )
+      ->add(
+        'height',
+        NumberType::class,
+        array(
+          'label' => 'Your height',
+          'required' => FALSE,
+        )
+      )
       ->add(
         'yearofbirth',
-        NULL,
+        DateType::class,
         array(
+          'widget' => 'single_text',
+          'required' => FALSE,
           'label' => 'The year of your birth',
         )
       )
@@ -41,7 +59,7 @@ class RegistrationType extends AbstractType {
       ->add('lastHb1c', NULL, array('label' => 'The % of your last hb1c'))
       ->add(
         'lastHb1cDate',
-        NULL,
+        DateType::class,
         array('label' => 'The date you did your last Hb1c')
       )
       ->add(
@@ -49,10 +67,27 @@ class RegistrationType extends AbstractType {
         ChoiceType::class,
         array(
           'label' => 'The type of diabete you have',
+          'placeholder' => 'Choose your diabete type',
           'choices' => array(
             'Type 1' => 1,
             'Type 2' => 2,
           ),
+        )
+      )
+      ->add(
+        'insulinSensivity',
+        NumberType::class,
+        array(
+          'label' => 'Your insulin sensivity',
+          'attr' => array('placeholder' => '1 unit of insulin correct ... g/L in my glycemy'),
+        )
+      )
+      ->add(
+        'glycemicObjective',
+        NumberType::class,
+        array(
+          'label' => 'Your glycemic objective',
+          'attr' => array('placeholder' => 'What blood sugar level do you want after correction. Example : 1.20 g/L'),
         )
       )
       ->add(

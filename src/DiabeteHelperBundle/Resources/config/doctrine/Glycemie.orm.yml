@@ -51,6 +51,12 @@ DiabeteHelperBundle\Entity\Glycemie:
             nullable: true
             length: 500
             column: remarque
+        estimatedCorrectionBolus:
+            type: decimal
+            nullable: true
+            precision:  10
+            scale:  2
+            column: estimatedCorrectionBolus
 
 
     manyToOne:

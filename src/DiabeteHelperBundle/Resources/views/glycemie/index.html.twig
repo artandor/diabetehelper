@@ -49,6 +49,7 @@
                                     data-repas="{{ glycemie.repas }}"
                                     data-activite="{{ glycemie.activite }}"
                                     data-remarque="{{ glycemie.remarque }}"
+                                    data-estimatedCorrectionBolus="{{ glycemie.estimatedCorrectionBolus }}"
                             >{{ 'show'|trans|capitalize }}
                             </button>
                             <a class="btn btn-default"
@@ -98,6 +99,7 @@
                     var repas = glycemie.dataset.repas;
                     var activite = glycemie.dataset.activite;
                     var remarque = glycemie.dataset.remarque;
+                    var estimatedCorrectionBolus = glycemie.dataset.estimatedcorrectionbolus;
 
                     if (tauxGlycemie != '') {
                         tauxGlycemie = tauxGlycemie + ' g/L'
@@ -114,13 +116,18 @@
                     if (remarque) {
                         remarque = '<br/>{{ 'note'|trans }} : ' + remarque
                     }
+                    if (estimatedCorrectionBolus) {
+                        estimatedCorrectionBolus = '<br/>{{ 'estimated bolus correction'|trans|capitalize }} : ' + estimatedCorrectionBolus;
+                    }
 
                     document.getElementById('showGlycemieTitle').innerHTML = 'Glycémie du ' + dateGlycemie;
                     document.getElementById('showGlycemieBody').innerHTML = '<p> {{ 'Blood sugar level'|trans }} : ' + tauxGlycemie +
                             '<br/>' + tauxAcetone +
                             '<br/>' + repas +
                             activite +
-                            '<br/>' + remarque + '</p>';
+                            '<br/>' + remarque +
+                            '<br/>' + estimatedCorrectionBolus +
+                            '</p>';
                     //document.getElementById('showGlycemieFooter').innerHTML += '<button type="button" class="btn btn-primary">Save changes</button>';
                 }
             </script>
