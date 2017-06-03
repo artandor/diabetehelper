@@ -1,5 +1,7 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
+{% block title %}{{ 'my account'|trans|capitalize }}{{ parent() }}{% endblock title %}
+
 {% block fos_user_content %}
     {% include "FOSUserBundle:Profile:show_content.html.twig" %}
 
@@ -8,7 +10,7 @@
     {{ 'your weight'|trans|capitalize }} : {{ user.weight }}<br/>
     {{ 'Your height'|trans|capitalize }} : {{ user.height }}<br/>
     {% if user.yearofbirth is not null %}
-        {% set age = "now"|date("Y") - user.yearofbirth %}
+        {% set age = "now"|date("Y-m-d") - user.yearofbirth|date("Y-m-d") %}
         {{ 'your age'|trans|capitalize }} : {{ age }}<br/>
     {% endif %}
     {{ 'your blood type'|trans|capitalize }} : {{ user.bloodtype }}<br/>
@@ -16,10 +18,13 @@
     <h3>Diabete informations</h3>
     {{ 'your last Hb1c result'|trans|capitalize }} : {{ user.lastHb1c }}<br/>
     {% if user.lastHb1cdate is not null %}
-        The date of your last Hb1c exam : {{ user.lastHb1cdate|date("M/d/Y") }}<br/>
+        {{ 'the date of your last Hb1c exam'|trans|capitalize }} : {{ user.lastHb1cdate|date("M/d/Y") }}<br/>
     {% endif %}
-    Diabete Type : {{ user.typeDiabete }}<br/>
-    Traitement Type : {{ user.typeTraitement }}
+    {{ 'diabete type'|trans|capitalize }} : {{ user.typeDiabete }}<br/>
+    {{ 'traitement type'|trans|capitalize }} : {{ user.typeTraitement }}<br/>
+    {{ 'diabete type'|trans|capitalize }} : {{ user.typeDiabete }}<br/>
+    {{ 'insulin sensivity'|trans|capitalize }} : {{ user.insulinSensivity }}<br/>
+    {{ 'glycemic objective for corrections'|trans|capitalize }} : {{ user.glycemicObjective }}
     </p>
 {% endblock fos_user_content %}
 
