@@ -66,7 +66,6 @@ class StatistiquesController extends Controller {
     $diff = $dateEnd->diff($dateStart)->d;
     $stockDateStart = clone $dateStart;
     for ($i = 0; $i < $diff; $i++) {
-      //dump($dateStart->modify('+ '. $i .' day'));
       $data[$stockDateStart->modify('+1 day')->format('d/M')] = array(
         $stockDateStart->format('d/M'),
         NULL,
