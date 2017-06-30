@@ -61,6 +61,7 @@
             </table>
         {% else %}
             {{ 'you must be connected to access your glycemias or add one.'|trans|capitalize }}
+            <p><a href="{{ path('fos_user_security_login') }}">{{ 'go to login page'|trans|capitalize }}</a></p>
         {% endif %}
     {% endblock body %}
 
