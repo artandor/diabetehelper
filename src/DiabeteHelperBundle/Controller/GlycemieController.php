@@ -17,19 +17,13 @@ class GlycemieController extends Controller {
    *
    */
   public function indexAction() {
-    $em = $this->getDoctrine()->getManager();
+    $glycemies = $this->getUser()
+        ? $this->getDoctrine()->getManager()->getRepository('DiabeteHelperBundle:Glycemie')->findByIduser($this->getUser()->getId(), array('dateGlycemie' => 'DESC'))
+        : [];
 
-    ($this->getUser()) ? $glycemies = $em->getRepository(
-      'DiabeteHelperBundle:Glycemie'
-    )->findByIduser($this->getUser()->getId(), array('dateGlycemie' => 'DESC')) : NULL;
-
-
-    $renderParams = array();
-    isset($glycemies) ? $renderParams['glycemies'] = $glycemies : NULL;
-    return $this->render(
-      '@DiabeteHelper/glycemie/index.html.twig',
-      $renderParams
-    );
+    return $this->render('@DiabeteHelper/glycemie/index.html.twig', [
+            'glycemies' => $glycemies
+    ]);
   }
 
   /**
