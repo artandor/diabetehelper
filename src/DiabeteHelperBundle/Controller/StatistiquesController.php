@@ -5,19 +5,19 @@ namespace DiabeteHelperBundle\Controller;
 
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\LineChart;
 use CMEN\GoogleChartsBundle\GoogleCharts\Options\VAxis;
+use DiabeteHelperBundle\Entity\Glycemie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Translation\MessageSelector;
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\HttpFoundation\Request;
+use DiabeteHelperBundle\Form\Type\StatistiquesDatesType;
 
 class StatistiquesController extends Controller
 {
     public function indexAction(Request $request)
     {
         $renderParams = array();
-        $form = $this->createForm(
-            'DiabeteHelperBundle\Form\Type\StatistiquesDatesType'
-        );
+        $form = $this->createForm(StatistiquesDatesType::class);
         $form->handleRequest($request);
 
         $dateStart = $form->get('dateStart')->getData();
@@ -39,12 +39,11 @@ class StatistiquesController extends Controller
 
             $lineChart = $this->createLineChart($donneesCourbe, $dateStart, $dateEnd);
         }
-
         $renderParams['form'] = $form->createView();
         $renderParams['glycemies'] = $glycemies;
 
         if (isset($lineChart)) $renderParams['linechart'] = $lineChart;
-        dump($lineChart);
+        //dump($lineChart);
         return $this->render(
             'DiabeteHelperBundle:statistiques:index.html.twig', $renderParams);
     }
@@ -73,6 +72,7 @@ class StatistiquesController extends Controller
     private function calculMoyennesGlycemiques($glycemies, &$destinationDatas)
     {
         $moyennes = array();
+        /** @var Glycemie $glycemie */
         foreach ($glycemies as $key => $glycemie) {
             if (!array_key_exists(
                 $glycemie->getDateGlycemie()->format('d/M'),
@@ -80,9 +80,10 @@ class StatistiquesController extends Controller
             )
             ) {
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['dateGlycemie'] = $glycemie->getDateGlycemie()->format('d/M');
-                $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['tauxGlycemie'] = $glycemie->getTauxGlycemie();
+                $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['tauxGlycemie'] = (float) $glycemie->getTauxGlycemie();
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['coef'] = 1;
             } else {
+                //$moyennes[$glycemie->getDateGlycemie()->format('d/M')]['dateGlycemie'] = $glycemie->getDateGlycemie()->format('d/M');
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['tauxGlycemie'] =
                     (
                         (
@@ -97,11 +98,11 @@ class StatistiquesController extends Controller
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['coef']++;
             }
         }
-        dump($moyennes);
         foreach ($moyennes as $key2 => $taux) {
-                $destinationDatas[$taux['dateGlycemie']][1] = (float)$taux['tauxGlycemie'];
+            $date = $taux['dateGlycemie'];
+            $destinationDatas[$date][0] = $taux['dateGlycemie'];
+            $destinationDatas[$date][1] = (float)$taux['tauxGlycemie'];
         }
-        dump($destinationDatas);
     }
 
     private function createLineChart($donneesCourbe, $dateStart, $dateEnd)
