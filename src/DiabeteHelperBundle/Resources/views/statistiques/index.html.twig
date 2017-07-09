@@ -23,7 +23,7 @@
         {% endif %}
     {% else %}
         <p>{{ 'you must be connected to access your stats.'|trans|capitalize }}</p>
-        <p><a href="{{ path('fos_user_security_login') }}">Go to login page</a></p>
+        <p><a href="{{ path('fos_user_security_login') }}">{{ 'go to login page'|trans|capitalize }}</a></p>
     {% endif %}
 
 

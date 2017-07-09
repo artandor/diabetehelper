@@ -12,7 +12,7 @@ class GlycemieRepository extends \Doctrine\ORM\EntityRepository {
   public function findGlycemiesByDates(
     $dateStart = NULL,
     $dateEnd = NULL,
-    $idUser = NULL
+    $idUser
   ) {
     $qb = $this->createQueryBuilder('glycemie')
       ->andWhere('glycemie.iduser = :iduser')

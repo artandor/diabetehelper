@@ -19,7 +19,7 @@ class StatistiquesDatesType extends AbstractType {
         DateTimeType::class,
         array(
           'label' => $translator->trans('Date start'),
-          'data' => new \DateTime("-15 days"),
+          'data' => new \DateTime('-15 days'),
           'date_format' => 'd M y',
         )
       )

@@ -1,0 +1,13 @@
+/* TEAM */
+Chef de projet : Nicolas MYLLE
+Site: millt.nico[at]hotmail.fr
+Location: Lille, France
+
+/* THANKS */
+Name: Valentin Silvestre / https://github.com/vasilvestre
+
+/* SITE */
+Last update:  2017/06/22
+Standards: HTML5, CSS3, PHP7, Symfony3
+Components: jQuery, Bootstrap3
+Software: PhpStorm 2017
