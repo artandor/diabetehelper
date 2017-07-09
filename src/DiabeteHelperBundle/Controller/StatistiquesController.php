@@ -59,12 +59,21 @@ class StatistiquesController extends Controller
         );
         $diff = $dateEnd->diff($dateStart)->d;
         $stockDateStart = clone $dateStart;
-        for ($i = 0; $i < $diff; $i++) {
-            $data[$stockDateStart->modify('+1 day')->format('d/M')] = array(
-                $stockDateStart->format('d/M'),
-                NULL,
-                //rand(0, 140),
-            );
+        for ($i = 0; $i <= $diff; $i++) {
+            if ($i == 0) {
+                $data[$stockDateStart->format('d/M')] = array(
+                    $stockDateStart->format('d/M'),
+                    NULL,
+                    //rand(0, 140),
+                );
+            } else {
+                $data[$stockDateStart->modify('+1 day')->format('d/M')] = array(
+                    $stockDateStart->format('d/M'),
+                    NULL,
+                    //rand(0, 140),
+                );
+            }
+
         }
         return $data;
     }
@@ -80,7 +89,7 @@ class StatistiquesController extends Controller
             )
             ) {
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['dateGlycemie'] = $glycemie->getDateGlycemie()->format('d/M');
-                $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['tauxGlycemie'] = (float) $glycemie->getTauxGlycemie();
+                $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['tauxGlycemie'] = (float)$glycemie->getTauxGlycemie();
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['coef'] = 1;
             } else {
                 //$moyennes[$glycemie->getDateGlycemie()->format('d/M')]['dateGlycemie'] = $glycemie->getDateGlycemie()->format('d/M');
@@ -98,10 +107,13 @@ class StatistiquesController extends Controller
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['coef']++;
             }
         }
-        foreach ($moyennes as $key2 => $taux) {
-            $date = $taux['dateGlycemie'];
-            $destinationDatas[$date][0] = $taux['dateGlycemie'];
+        dump($moyennes);
+        dump($destinationDatas);
+
+        foreach ($moyennes as $date => $taux) {
+            $destinationDatas[$date][0] = $date;
             $destinationDatas[$date][1] = (float)$taux['tauxGlycemie'];
+            dump($destinationDatas);
         }
     }
 
