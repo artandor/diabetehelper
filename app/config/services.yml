@@ -17,3 +17,7 @@ services:
             - { name: security.voter }
         # small performance boost
         public: false
+    twig.json_decode:
+        class: DiabeteHelperBundle\Twig\Extension\JsonDecode
+        tags:
+            - { name: twig.extension }
