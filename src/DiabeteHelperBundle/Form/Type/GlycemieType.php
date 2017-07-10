@@ -12,9 +12,10 @@ use Symfony\Component\Translation\MessageSelector;
 use Symfony\Component\Translation\Translator;
 
 class GlycemieType extends AbstractType {
-  /**
-   * {@inheritdoc}
-   */
+    /**
+     * {@inheritdoc}
+     * @throws \Symfony\Component\Translation\Exception\InvalidArgumentException
+     */
   public function buildForm(FormBuilderInterface $builder, array $options) {
     $translator = new Translator('fr', new MessageSelector());
     $builder->add(
@@ -44,7 +45,7 @@ class GlycemieType extends AbstractType {
         NULL,
         array(
           'label'=> ucfirst($translator->trans('date/hour of')).' '. $translator->trans('the blood sugar test'),
-          'data' => new \DateTime("NOW"),
+          'data' => new \DateTime('NOW'),
           'date_format' => 'd M y',
         )
       )
@@ -88,9 +89,10 @@ class GlycemieType extends AbstractType {
       );
   }
 
-  /**
-   * {@inheritdoc}
-   */
+    /**
+     * {@inheritdoc}
+     * @throws \Symfony\Component\OptionsResolver\Exception\AccessException
+     */
   public function configureOptions(OptionsResolver $resolver) {
     $resolver->setDefaults(
       array(

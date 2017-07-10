@@ -125,14 +125,14 @@ class User extends BaseUser {
   }
 
   /**
-   * @return int
+   * @return \DateTime
    */
   public function getYearOfBirth() {
     return $this->yearofbirth;
   }
 
   /**
-   * @param int $yearofbirth
+   * @param \DateTime $yearofbirth
    */
   public function setYearOfBirth($yearofbirth) {
     $this->yearofbirth = $yearofbirth;
@@ -272,4 +272,33 @@ class User extends BaseUser {
 
     return $this;
   }
+    /**
+     * @var string
+     */
+    private $glucidInsulinRatio;
+
+
+    /**
+     * Set glucidInsulinRatio
+     *
+     * @param string $glucidInsulinRatio
+     *
+     * @return User
+     */
+    public function setGlucidInsulinRatio($glucidInsulinRatio)
+    {
+        $this->glucidInsulinRatio = $glucidInsulinRatio;
+
+        return $this;
+    }
+
+    /**
+     * Get glucidInsulinRatio
+     *
+     * @return string
+     */
+    public function getGlucidInsulinRatio()
+    {
+        return $this->glucidInsulinRatio;
+    }
 }
