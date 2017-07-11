@@ -1,8 +1,15 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
 <div>
+    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+    <div>
+        <input class="btn btn-warning" type="submit" value="{{ 'profile.edit.submit'|trans }}"/>
+    </div>
+    {{ form_end(form) }}
+</div>
+
+<div class="well">
     <div>
         <ol id="dates">
             {% set glucidInsulinRatio = app.user.glucidInsulinRatio|json_decode %}
@@ -25,7 +32,3 @@
         </form>
     </div>
 </div>
-<div>
-    <input class="btn btn-warning" type="submit" value="{{ 'profile.edit.submit'|trans }}"/>
-</div>
-{{ form_end(form) }}
