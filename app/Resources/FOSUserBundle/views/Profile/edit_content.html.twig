@@ -4,7 +4,7 @@
     {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
     {{ form_widget(form) }}
     
-    {# Custom form for insulin ratios#}
+    {# START Custom form for insulin ratios#}
     <div class="well">
         <div>
             <ol id="dates">
@@ -14,7 +14,7 @@
                         data-hourEnd="{{ ratio.hourend }}" data-ratio="{{ ratio.ratio }}">
                         Heure start : {{ ratio.hourstart }} / heure end : {{ ratio.hourend }} /
                         ratio : {{ ratio.ratio }}
-                    <button type="button" class="close remove" aria-label="Close"><span aria-hidden="true">×</span></button></li>
+                    </li>
                 {% endfor %}
             </ol>
         </div>
@@ -35,6 +35,7 @@
             <button id="addPlage" type="button" class="btn btn-default">Ajouter une plage</button>
         </div>
     </div>
+    {# END Custom form for insulin ratios#}
     <div>
         <input class="btn btn-warning" type="submit" value="{{ 'profile.edit.submit'|trans }}"/>
     </div>

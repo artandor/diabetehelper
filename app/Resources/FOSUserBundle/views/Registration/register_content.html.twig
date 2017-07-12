@@ -2,7 +2,7 @@
 
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
     {{ form_widget(form) }}
-    {# Custom form for insulin ratios#}
+    {# START Custom form for insulin ratios#}
     <div class="well">
         <div>
             <ol id="dates">
@@ -12,7 +12,7 @@
                         data-hourEnd="{{ ratio.hourend }}" data-ratio="{{ ratio.ratio }}">
                         Heure start : {{ ratio.hourstart }} / heure end : {{ ratio.hourend }} /
                         ratio : {{ ratio.ratio }}
-                    <span class="glyphicon glyphicon-remove"></span></li>
+                    </li>
                 {% endfor %}
             </ol>
         </div>
@@ -33,6 +33,7 @@
             <button id="addPlage" type="button" class="btn btn-default">Ajouter une plage</button>
         </div>
     </div>
+    {# END Custom form for insulin ratios#}
 <div>
     <input class="btn btn-success" type="submit" value="{{ 'registration.submit'|trans }}"/>
 </div>
