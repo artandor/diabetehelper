@@ -100,7 +100,15 @@ class RegistrationType extends AbstractType
                 'typeTraitement',
                 TextType::class,
                 array('label' => 'What traitements do you take')
-            );
+            )
+            ->add(
+                'glucidInsulinRatio',
+                HiddenType::class,
+                array(
+                    'required' => false
+                )
+            )
+            ;
     }
 
     public function getParent()

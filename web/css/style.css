@@ -35,10 +35,10 @@ table, th {
     -webkit-text-fill-color: transparent;
 }
 
-.breadcrumb {
-    /*margin: 0;*/
-}
-
 .alert{
     margin: 20px 0;
+}
+
+ol .close{
+    float: none;
 }

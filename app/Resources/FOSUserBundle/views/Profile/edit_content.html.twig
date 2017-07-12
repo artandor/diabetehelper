@@ -14,15 +14,24 @@
                         data-hourEnd="{{ ratio.hourend }}" data-ratio="{{ ratio.ratio }}">
                         Heure start : {{ ratio.hourstart }} / heure end : {{ ratio.hourend }} /
                         ratio : {{ ratio.ratio }}
-                    </li>
+                    <button type="button" class="close remove" aria-label="Close"><span aria-hidden="true">×</span></button></li>
                 {% endfor %}
             </ol>
         </div>
         <div id="formPlagesHoraires">
-            <input type="time" name="hourStart" id="hourStart" disabled class="form-control"/>
-            <input type="time" name="hourEnd" id="hourEnd" max="23:59" class="form-control"/>
-            <div id="errorRatio" class="alert alert-warning alert-dismissible fade in hidden" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Holy guacamole!</strong> Best check yo self, you\'re not looking too good. </div>
-            <input type="number" name="ratio" id="ratio" min="0" step="0.01" class="form-control"/>
+            <div class="form-group">
+                <label class="control-label">{{ 'hour start'|trans|capitalize }}</label>
+                <input type="time" name="hourStart" id="hourStart" disabled class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">{{ 'hour end'|trans|capitalize }}</label>
+                <input type="time" name="hourEnd" id="hourEnd" max="23:59" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">{{ 'ratio'|trans|capitalize }}</label>
+                <div id="errorRatio" class="alert alert-warning alert-dismissible fade in hidden" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Holy guacamole!</strong> Best check yo self, you\'re not looking too good. </div>
+                <input type="number" name="ratio" id="ratio" min="0" step="0.01" class="form-control"/>
+            </div>
             <button id="addPlage" type="button" class="btn btn-default">Ajouter une plage</button>
         </div>
     </div>

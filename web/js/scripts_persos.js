@@ -4,6 +4,7 @@
 
 jQuery(document).ready(function ($) {
 
+    /* Start Form glucid/Insulin ratios */
     var form = $('#formPlagesHoraires');
     if ($('ol#dates li').data('hourend')) {
         var lastChildData = $('ol#dates li:last-child');
@@ -56,4 +57,9 @@ jQuery(document).ready(function ($) {
             
         }
     });
+    
+    $('#dates li').find('.remove').click(function (){
+        $(this).parent().remove();
+    });
+    /* End Form glucid/Insulin ratios */
 });
