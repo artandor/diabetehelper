@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
 
     var form = $('#formPlagesHoraires');
     if ($('ol#dates li').length > 0){
-        addRemoveButtonAfter($('ol#dates li:last-child'));
+        addRemoveButtonAfter($('ol#dates.with-form li:last-child'));
     }
     
     /* Setting up default values for time fields */
@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
             refreshFormRatio(form);
             
             $('ol#dates li').find('.remove').remove();
-            addRemoveButtonAfter($('ol#dates li:last-child'));
+            addRemoveButtonAfter($('ol#dates.with-form li:last-child'));
             
             insertJsonIntoHiddenField($('#dates'), 'li', $('#fos_user_profile_form_glucidInsulinRatio'));
         } else {
@@ -74,9 +74,14 @@ jQuery(document).ready(function ($) {
     
     function refreshFormRatio(form){
         var lastChildData = $('ol#dates li:last-child');
-        form.find('input[name="hourStart"]').val(lastChildData.data('hourend'));
-        form.find('input[name="hourEnd"]').val(lastChildData.data('hourend'));
-        form.find('input[name="hourEnd"]').attr('min', lastChildData.data('hourend'));
+        if(lastChildData.length > 0){
+            form.find('input[name="hourStart"]').val(lastChildData.data('hourend'));
+            form.find('input[name="hourEnd"]').val(lastChildData.data('hourend'));
+            form.find('input[name="hourEnd"]').attr('min', lastChildData.data('hourend'));
+        } else {
+            form.find('input[name="hourStart"]').val('00:00');
+            form.find('input[name="hourEnd"]').val('00:00');
+        }
     }
     
     $('body').delegate('#dates li .remove', 'click', function(){

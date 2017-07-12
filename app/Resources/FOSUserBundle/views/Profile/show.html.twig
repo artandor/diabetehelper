@@ -30,7 +30,7 @@
     </p>
     
     <div class="well">
-        <h3>{{ 'glucid/insulin ratios'|trans }}</h3>
+        <h3>{{ 'glucid/insulin ratios'|trans|capitalize }}</h3>
         <ol id="dates">
             {% set glucidInsulinRatio = app.user.glucidInsulinRatio|json_decode %}
             {% for ratio in glucidInsulinRatio %}
