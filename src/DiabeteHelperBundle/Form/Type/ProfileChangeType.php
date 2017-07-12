@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -119,7 +120,15 @@ class ProfileChangeType extends AbstractType
                     'label' => 'What traitements do you take',
                     'required' => false
                 )
-            );
+            )
+            ->add(
+                'glucidInsulinRatio',
+                HiddenType::class,
+                array(
+                    'required' => false
+                )
+            )
+            ;
 /*
             ->add(
                 'test',

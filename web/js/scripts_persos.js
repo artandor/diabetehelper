@@ -4,7 +4,7 @@
 
 jQuery(document).ready(function ($) {
 
-    var form = $('form#formPlagesHoraires');
+    var form = $('#formPlagesHoraires');
     if ($('ol#dates li').data('hourend')) {
         var lastChildData = $('ol#dates li:last-child');
 
@@ -18,9 +18,9 @@ jQuery(document).ready(function ($) {
     }
 
 
-    $('form#formPlagesHoraires #addPlage').click(function addPlage() {
+    form.find('#addPlage').click(function addPlage() {
         if (form.find('input[name=hourStart]').val() !== "" && form.find('input[name=hourEnd]').val() !== "" && form.find('input[name=ratio]').val() !== "") {
-
+            $('#errorRatio').addClass('hidden');
             var html =
                 '<li data-hourStart="' +
                 form.find('input[name=hourStart]').val() +
@@ -40,29 +40,20 @@ jQuery(document).ready(function ($) {
             form.find('input[name="hourStart"]').val(lastChildData.data('hourend'));
             form.find('input[name="hourEnd"]').val(lastChildData.data('hourend'));
             form.find('input[name="hourEnd"]').attr('min', lastChildData.data('hourend'));
+            
+            var allData = [];
+    
+    
+            $('#dates').find('li').each(function (index, element) {
+                allData.push($(this).data());
+            });
+    
+            allData = JSON.stringify(allData);
+            console.log(allData);
+            $('#fos_user_profile_form_glucidInsulinRatio').val(allData);
+        } else {
+            $('#errorRatio').removeClass('hidden');
+            
         }
-    });
-
-    form.submit(function (event) {
-
-        // Stop form from submitting normally
-        event.preventDefault();
-
-        var allData = [];
-
-
-        $('#dates').find('li').each(function (index, element) {
-            allData.push($(this).data());
-        });
-
-        console.log(JSON.stringify(allData));
-        allData = JSON.stringify(allData);
-
-        var url = form.attr("action");
-        console.log(url);
-
-        /*$.post(url, 'data=' + allData, function (response) {
-         alert(response);
-         });*/
     });
 });

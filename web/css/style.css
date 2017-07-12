@@ -38,3 +38,7 @@ table, th {
 .breadcrumb {
     /*margin: 0;*/
 }
+
+.alert{
+    margin: 20px 0;
+}
