@@ -6,10 +6,10 @@
     <meta http-equiv="content-type" xml:lang="{{ app.request.getLocale() }}" content="application/xhtml+xml; charset=utf-8"/>
     {# Redirect user if javascript is disabled #}
     
-    {# //break the site if no JS (i need the current path actually)
-    {% if path() != path('diabete_helper_homepage') %}
+    {# break the site if no JS #}
+    {% if app.request.attributes.get('_route') != 'diabete_helper_homepage' %}
         <noscript><meta http-equiv="refresh"content="0; url={{ path('diabete_helper_homepage') }}"></noscript>
-    {% endif %}#}
+    {% endif %}
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}"/>
 
     <link type="text/plain" rel="author" href="{{ url('diabete_helper_homepage') }}humans.txt"/>
@@ -160,6 +160,9 @@
     {% block breadcrumb %}
     {% endblock breadcrumb %}
     </ol>
+
+    {% block statusMessages %}
+    {% endblock statusMessages %}
 
     {% block body %}
     {% endblock body %}
