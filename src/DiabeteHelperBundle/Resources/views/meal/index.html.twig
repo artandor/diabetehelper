@@ -9,6 +9,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Carbohydrates</th>
+                        <th>Bolus</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -16,7 +17,8 @@
                 {% for meal in meals %}
                     <tr>
                         <td><a href="{{ path('meal_show', { 'id': meal.id }) }}">{{ meal.id }}</a></td>
-                        <td>{{ meal.carbohydrates }}</td>
+                        <td>{{ meal.carbohydrate }}</td>
+                        <td>{{ meal.estimatedMealBolus }}</td>
                         <td>
                             <ul>
                                 <li>

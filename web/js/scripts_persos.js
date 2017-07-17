@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2016 - 2017.  Nicolas MYLLE
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ */
+
 /**
  * Created by millt on 31/10/2016.
  */
@@ -59,13 +66,13 @@ jQuery(document).ready(function ($) {
 
             $('#dates').append(html);
             refreshFormRatio(form);
-            
+
             $('ol#dates li').find('.remove').remove();
             addRemoveButtonAfter($('ol#dates.with-form li:last-child'));
             insertJsonIntoHiddenField($('#dates'), 'li', $('#' + form.parents('form').attr('name') + '_carbsInsulinRatio'));
         } else {
             $('#errorRatio').removeClass('hidden');
-            
+
         }
     });
     

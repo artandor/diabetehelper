@@ -31,7 +31,8 @@
             <div class="form-group">
                 <label class="control-label">{{ 'ratio'|trans|capitalize }}</label>
                 <div id="errorRatio" class="alert alert-warning fade in hidden" role="alert">{{ "this field can't be empty"|trans|capitalize }}</div>
-                <input type="number" name="ratio" id="ratio" min="0" step="0.01" class="form-control"/>
+                <input type="number" name="ratio" id="ratio" min="0" step="0.01" class="form-control"
+                       placeholder="{{ 'insulin units / 10g of carbs'|trans|capitalize }}"/>
             </div>
             <button id="addPlage" type="button" class="btn btn-default">Ajouter une plage</button>
         </div>

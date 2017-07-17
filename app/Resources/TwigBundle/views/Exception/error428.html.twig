@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ 'An Error Occurred:'|trans }} {{ status_text }}
+{% endblock title %}
+
+{% block body %}
+    <h1>{{ 'Oops! An Error Occurred'|trans }}</h1>
+
+    <div>
+        {{ status_text }}
+    </div>
+{% endblock body %}

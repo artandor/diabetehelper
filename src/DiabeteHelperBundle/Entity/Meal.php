@@ -1,4 +1,10 @@
 <?php
+/**
+ * Copyright (c) 2016 - 2017.  Nicolas MYLLE
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ */
 
 namespace DiabeteHelperBundle\Entity;
 
@@ -21,7 +27,28 @@ class Meal
      * @var \DiabeteHelperBundle\Entity\User
      */
     private $iduser;
+    /**
+     * @var string
+     */
+    private $carbohydrate;
+    /**
+     * @var \DateTime
+     */
+    private $dateMeal;
+    /**
+     * @var string
+     */
+    private $estimatedMealBolus;
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set id
@@ -38,13 +65,13 @@ class Meal
     }
 
     /**
-     * Get id
+     * Get carbohydrates
      *
-     * @return integer
+     * @return string
      */
-    public function getId()
+    public function getCarbohydrates()
     {
-        return $this->id;
+        return $this->carbohydrates;
     }
 
     /**
@@ -62,13 +89,50 @@ class Meal
     }
 
     /**
-     * Get carbohydrates
+     * Get estimatedMealBolus
      *
      * @return string
      */
-    public function getCarbohydrates()
+    public function getEstimatedMealBolus()
     {
-        return $this->carbohydrates;
+        return $this->estimatedMealBolus;
+    }
+
+    /**
+     * Set estimatedMealBolus
+     *
+     * @return Meal
+     * @throws \Exception
+     */
+    public function setEstimatedMealBolus()
+    {
+        $user = $this->getIduser();
+
+        $ratios = json_decode($user->getCarbsInsulinRatio());
+
+        if ($ratios !== null) {
+            $time = $this->getDateMeal()->format('H:i');
+            /** @var array $ratios */
+            foreach ($ratios as $key => $plage) {
+                if ($time > $plage->hourstart && $time < $plage->hourend) {
+                    $estimatedMealBolus = ($this->getCarbohydrate() * $plage->ratio) / 10;
+                }
+            }
+            $this->estimatedMealBolus = $estimatedMealBolus;
+        } else {
+            throw new \Symfony\Component\HttpKernel\Exception\HttpException(428, 'You did not set up your ratios.');
+        }
+        return $this;
+    }
+
+    /**
+     * Get iduser
+     *
+     * @return \DiabeteHelperBundle\Entity\User
+     */
+    public function getIduser()
+    {
+        return $this->iduser;
     }
 
     /**
@@ -86,48 +150,14 @@ class Meal
     }
 
     /**
-     * Get iduser
+     * Get dateMeal
      *
-     * @return \DiabeteHelperBundle\Entity\User
+     * @return \DateTime
      */
-    public function getIduser()
+    public function getDateMeal()
     {
-        return $this->iduser;
+        return $this->dateMeal;
     }
-    /**
-     * @var string
-     */
-    private $carbohydrate;
-
-
-    /**
-     * Set carbohydrate
-     *
-     * @param string $carbohydrate
-     *
-     * @return Meal
-     */
-    public function setCarbohydrate($carbohydrate)
-    {
-        $this->carbohydrate = $carbohydrate;
-
-        return $this;
-    }
-
-    /**
-     * Get carbohydrate
-     *
-     * @return string
-     */
-    public function getCarbohydrate()
-    {
-        return $this->carbohydrate;
-    }
-    /**
-     * @var \DateTime
-     */
-    private $dateMeal;
-
 
     /**
      * Set dateMeal
@@ -144,56 +174,26 @@ class Meal
     }
 
     /**
-     * Get dateMeal
-     *
-     * @return \DateTime
-     */
-    public function getDateMeal()
-    {
-        return $this->dateMeal;
-    }
-    /**
-     * @var string
-     */
-    private $estimatedMealBolus;
-
-
-    /**
-     * Set estimatedMealBolus
-     *
-     * @return Meal
-     */
-    public function setEstimatedMealBolus()
-    {
-        $user = $this->getIduser();
-        
-        $ratios = json_decode($user->getCarbsInsulinRatio());
-        
-        //dump($ratios);
-        
-        $now = date("H:i:s");
-        
-        
-
-        foreach($ratios as $key => $plage){
-            dump(strtotime($plage->hourstart));
-            if ($now > strtotime($plage->hourstart) && $now < strtotime($plage->hourend)) {
-                dump('on avance');
-            }
-        }
-
-        $this->estimatedMealBolus = $estimatedMealBolus;
-
-        return $this;
-    }
-
-    /**
-     * Get estimatedMealBolus
+     * Get carbohydrate
      *
      * @return string
      */
-    public function getEstimatedMealBolus()
+    public function getCarbohydrate()
     {
-        return $this->estimatedMealBolus;
+        return $this->carbohydrate;
+    }
+
+    /**
+     * Set carbohydrate
+     *
+     * @param string $carbohydrate
+     *
+     * @return Meal
+     */
+    public function setCarbohydrate($carbohydrate)
+    {
+        $this->carbohydrate = $carbohydrate;
+
+        return $this;
     }
 }
