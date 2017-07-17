@@ -4,7 +4,9 @@ namespace DiabeteHelperBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class MealType extends AbstractType
 {
@@ -14,7 +16,18 @@ class MealType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('carbohydrate')
+        ->add(
+            'carbohydrate'
+            )
+        ->add(
+            'dateMeal',
+            DateTimeType::class,
+            array(
+              'label'=> 'date/hour of the Meal',
+              'data' => new \DateTime('NOW'),
+              'date_format' => 'd M y'
+            )
+          )
         ;
     }
     

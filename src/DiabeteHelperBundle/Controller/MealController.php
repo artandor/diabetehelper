@@ -47,10 +47,11 @@ class MealController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $meal->setIduser($this->getUser());
-            $em->persist($meal);
-            $em->flush();
+            $meal->setEstimatedMealBolus();
+            /*$em->persist($meal);
+            $em->flush();*/
 
-            return $this->redirectToRoute('meal_show', array('id' => $meal->getId()));
+            //return $this->redirectToRoute('meal_show', array('id' => $meal->getId()));
         }
 
         return $this->render('@DiabeteHelper/meal/new.html.twig', array(

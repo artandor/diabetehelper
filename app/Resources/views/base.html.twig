@@ -67,11 +67,16 @@
                             <li><a href="{{ path('glycemie_index') }}"><span class="glyphicon glyphicon-tint"></span>
                                     {{ 'glycemias'|trans|capitalize }}</a></li>
                         {% endif %}
+                        {% if app.request.attributes.get('_route') == 'meal_index' %}
+                            <li class="active"><a href="{{ path('meal_index') }}"><span
+                                            class="glyphicon glyphicon-glass"></span> {{ 'meals'|trans|capitalize }}<span class="sr-only">(current)</span></a>
+                            </li>
+                        {% else %}
+                            <li><a href="{{ path('meal_index') }}"><span class="glyphicon glyphicon-glass"></span>{{ 'meals'|trans|capitalize }}</a></li>
+                        {% endif %}
                         {% if app.request.attributes.get('_route') == 'statistiques' %}
                             <li class="active"><a href="{{ path('statistiques') }}"><span
-                                            class="glyphicon glyphicon-stats"></span> {{ 'statistics'|trans|capitalize }}
-                                    <span
-                                            class="sr-only">(current)</span></a></li>
+                                            class="glyphicon glyphicon-stats"></span> {{ 'statistics'|trans|capitalize }}<span class="sr-only">(current)</span></a></li>
                         {% else %}
                             <li><a href="{{ path('statistiques') }}"><span class="glyphicon glyphicon-stats"></span>
                                     {{ 'statistics'|trans|capitalize }}</a></li>
@@ -103,6 +108,9 @@
                                     #}
                                     <li>
                                         <a href="{{ path('glycemie_new') }}">{{ 'add a new glycemia'|trans|capitalize }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('meal_new') }}">{{ 'add a new meal'|trans|capitalize }}</a>
                                     </li>
                                     {#
                                     <li role="separator" class="divider"></li>

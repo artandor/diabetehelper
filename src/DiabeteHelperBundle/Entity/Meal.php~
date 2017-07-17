@@ -152,48 +152,4 @@ class Meal
     {
         return $this->dateMeal;
     }
-    /**
-     * @var string
-     */
-    private $estimatedMealBolus;
-
-
-    /**
-     * Set estimatedMealBolus
-     *
-     * @return Meal
-     */
-    public function setEstimatedMealBolus()
-    {
-        $user = $this->getIduser();
-        
-        $ratios = json_decode($user->getCarbsInsulinRatio());
-        
-        //dump($ratios);
-        
-        $now = date("H:i:s");
-        
-        
-
-        foreach($ratios as $key => $plage){
-            dump(strtotime($plage->hourstart));
-            if ($now > strtotime($plage->hourstart) && $now < strtotime($plage->hourend)) {
-                dump('on avance');
-            }
-        }
-
-        $this->estimatedMealBolus = $estimatedMealBolus;
-
-        return $this;
-    }
-
-    /**
-     * Get estimatedMealBolus
-     *
-     * @return string
-     */
-    public function getEstimatedMealBolus()
-    {
-        return $this->estimatedMealBolus;
-    }
 }

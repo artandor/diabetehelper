@@ -24,6 +24,12 @@ DiabeteHelperBundle\Entity\Meal:
             precision:  10
             scale:  2
             column: carbohydrate
+        estimatedMealBolus:
+            type: decimal
+            nullable: true
+            precision:  10
+            scale:  2
+            column: estimatedMealBolus
         dateMeal:
             type: datetime
             nullable: false
