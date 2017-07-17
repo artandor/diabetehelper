@@ -1,0 +1,37 @@
+DiabeteHelperBundle\Entity\Meal:
+    type: entity
+    repositoryClass: DiabeteHelperBundle\Repository\MealRepository
+    table:  meal
+    indexes:
+        FK_user_id:
+            columns:
+                - iduser
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id
+
+    fields:
+        carbohydrates:
+            type: decimal
+            nullable: false
+            precision:  10
+            scale:  2
+            column: carbohydrates
+    manyToOne:
+        iduser:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: id
+            inversedBy: null
+            joinColumns:
+                iduser:
+                    referencedColumnName: id
+            orphanRemoval: false
+
+    lifecycleCallbacks: {  }

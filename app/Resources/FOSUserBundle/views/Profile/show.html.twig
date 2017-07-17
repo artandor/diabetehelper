@@ -32,8 +32,8 @@
     <div class="well">
         <h3>{{ 'glucid/insulin ratios'|trans|capitalize }}</h3>
         <ol id="dates">
-            {% set glucidInsulinRatio = app.user.glucidInsulinRatio|json_decode %}
-            {% for ratio in glucidInsulinRatio %}
+            {% set carbsInsulinRatio = app.user.carbsInsulinRatio|json_decode %}
+            {% for ratio in carbsInsulinRatio %}
                 <li data-hourStart="{{ ratio.hourstart }}"
                     data-hourEnd="{{ ratio.hourend }}" data-ratio="{{ ratio.ratio }}">
                     Heure start : {{ ratio.hourstart }} / heure end : {{ ratio.hourend }} /

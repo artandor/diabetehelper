@@ -103,7 +103,7 @@ class RegistrationType extends AbstractType
                 array('label' => 'What traitements do you take')
             )
             ->add(
-                'glucidInsulinRatio',
+                'carbsInsulinRatio',
                 HiddenType::class,
                 array(
                     'required' => false

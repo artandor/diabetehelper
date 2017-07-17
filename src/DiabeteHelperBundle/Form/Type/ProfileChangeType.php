@@ -122,7 +122,7 @@ class ProfileChangeType extends AbstractType
                 )
             )
             ->add(
-                'glucidInsulinRatio',
+                'carbsInsulinRatio',
                 HiddenType::class,
                 array(
                     'required' => false

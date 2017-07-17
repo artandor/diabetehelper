@@ -19,9 +19,7 @@ jQuery(document).ready(function ($) {
         element.append('<button type="button" class="close remove" aria-label="Close"><span aria-hidden="true">×</span></button></li>');
     }
     
-
-    
-/* Start Form glucid/Insulin ratios */
+/* Start Form carbs/Insulin ratios */
 
     var form = $('#formPlagesHoraires');
     if ($('ol#dates li').length > 0){
@@ -64,8 +62,7 @@ jQuery(document).ready(function ($) {
             
             $('ol#dates li').find('.remove').remove();
             addRemoveButtonAfter($('ol#dates.with-form li:last-child'));
-            
-            insertJsonIntoHiddenField($('#dates'), 'li', $('#fos_user_profile_form_glucidInsulinRatio'));
+            insertJsonIntoHiddenField($('#dates'), 'li', $('#' + form.parents('form').attr('name') + '_carbsInsulinRatio'));
         } else {
             $('#errorRatio').removeClass('hidden');
             
@@ -87,7 +84,7 @@ jQuery(document).ready(function ($) {
     $('body').delegate('#dates li .remove', 'click', function(){
         $(this).parent().remove();
         refreshFormRatio(form);
-        insertJsonIntoHiddenField($('#dates'), 'li', $('#fos_user_profile_form_glucidInsulinRatio'));
+        insertJsonIntoHiddenField($('#dates'), 'li', $('#' + form.parents('form').attr('name') + '_carbsInsulinRatio'));
     });
-/* End Form glucid/Insulin ratios */
+/* End Form carbs/Insulin ratios */
 });
