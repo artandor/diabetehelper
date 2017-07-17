@@ -168,9 +168,9 @@ class GlycemieController extends Controller {
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
-      $em = $this->getDoctrine()->getManager();
-      $em->remove($glycemie);
-      $em->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($glycemie);
+        $em->flush();
     }
 
     return $this->redirectToRoute('glycemie_index');

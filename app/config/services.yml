@@ -17,6 +17,12 @@ services:
             - { name: security.voter }
         # small performance boost
         public: false
+    app.meal_voter:
+        class:  DiabeteHelperBundle\Security\MealVoter
+        tags:
+            - { name: security.voter }
+        # small performance boost
+        public: false
     twig.json_decode:
         class: DiabeteHelperBundle\Twig\Extension\JsonDecode
         tags:

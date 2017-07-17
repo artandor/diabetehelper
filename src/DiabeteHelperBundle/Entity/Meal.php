@@ -94,4 +94,62 @@ class Meal
     {
         return $this->iduser;
     }
+    /**
+     * @var string
+     */
+    private $carbohydrate;
+
+
+    /**
+     * Set carbohydrate
+     *
+     * @param string $carbohydrate
+     *
+     * @return Meal
+     */
+    public function setCarbohydrate($carbohydrate)
+    {
+        $this->carbohydrate = $carbohydrate;
+
+        return $this;
+    }
+
+    /**
+     * Get carbohydrate
+     *
+     * @return string
+     */
+    public function getCarbohydrate()
+    {
+        return $this->carbohydrate;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $dateMeal;
+
+
+    /**
+     * Set dateMeal
+     *
+     * @param \DateTime $dateMeal
+     *
+     * @return Meal
+     */
+    public function setDateMeal($dateMeal)
+    {
+        $this->dateMeal = $dateMeal;
+
+        return $this;
+    }
+
+    /**
+     * Get dateMeal
+     *
+     * @return \DateTime
+     */
+    public function getDateMeal()
+    {
+        return $this->dateMeal;
+    }
 }

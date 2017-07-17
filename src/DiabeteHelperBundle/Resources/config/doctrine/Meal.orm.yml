@@ -14,14 +14,22 @@ DiabeteHelperBundle\Entity\Meal:
                 unsigned: false
             id: true
             column: id
+            generator:
+                strategy: IDENTITY
 
     fields:
-        carbohydrates:
+        carbohydrate:
             type: decimal
             nullable: false
             precision:  10
             scale:  2
-            column: carbohydrates
+            column: carbohydrate
+        dateMeal:
+            type: datetime
+            nullable: false
+            options:
+                default:  null
+            column: dateMeal
     manyToOne:
         iduser:
             targetEntity: User

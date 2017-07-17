@@ -1,0 +1,24 @@
+meal_index:
+    path:     /
+    defaults: { _controller: "DiabeteHelperBundle:Meal:index" }
+    methods:  GET
+
+meal_show:
+    path:     /{id}/show
+    defaults: { _controller: "DiabeteHelperBundle:Meal:show" }
+    methods:  GET
+
+meal_new:
+    path:     /new
+    defaults: { _controller: "DiabeteHelperBundle:Meal:new" }
+    methods:  [GET, POST]
+
+meal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DiabeteHelperBundle:Meal:edit" }
+    methods:  [GET, POST]
+
+meal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DiabeteHelperBundle:Meal:delete" }
+    methods:  DELETE

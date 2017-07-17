@@ -1,6 +1,10 @@
 diabete_helper_glycemie:
     resource: "@DiabeteHelperBundle/Resources/config/routing/glycemie.yml"
     prefix:   /glycemie
+    
+diabete_helper_meal:
+    resource: "@DiabeteHelperBundle/Resources/config/routing/meal.yml"
+    prefix:   /meal
 
 diabete_helper_homepage:
     path:     /
@@ -11,3 +15,4 @@ statistiques:
     path:     /stats/
     defaults: { _controller: DiabeteHelperBundle:Statistiques:index }
     methods:  [GET, POST]
+
