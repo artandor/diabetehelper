@@ -142,8 +142,8 @@ class GlycemieController extends Controller {
       $this->getDoctrine()->getManager()->flush();
 
       return $this->redirectToRoute(
-        'glycemie_edit',
-        array('idGlycemie' => $glycemie->getIdglycemie())
+        'glycemie_show',
+        array('idGlycemie' => $glycemie->getIdGlycemie())
       );
     }
 

@@ -133,7 +133,7 @@ class MealController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('meal_edit', array('id' => $meal->getId()));
+            return $this->redirectToRoute('meal_show', array('id' => $meal->getId()));
         }
 
         return $this->render('@DiabeteHelper/meal/edit.html.twig', array(

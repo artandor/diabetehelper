@@ -1,4 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'DiabeteHelperBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ 'edit meal'|trans|capitalize }} {{ parent() }}
+{% endblock title %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('meal_index') }}">{{ 'meals'|trans|capitalize }}</a></li>
+    <li><a href="{{ path('meal_edit', { 'id': meal.id }) }}">{{ 'edit meal'|trans|capitalize }}</a></li>
+{% endblock breadcrumb %}
 
 {% block body %}
     <h1>Meal edit</h1>

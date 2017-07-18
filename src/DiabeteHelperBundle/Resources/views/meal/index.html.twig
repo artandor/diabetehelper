@@ -1,22 +1,29 @@
-{% extends 'base.html.twig' %}
+{% extends 'DiabeteHelperBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ 'meals'|trans|capitalize }} {{ parent() }}
+{% endblock title %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('meal_index') }}">{{ 'meals'|trans|capitalize }}</a></li>
+{% endblock breadcrumb %}
 
 {% block body %}
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <h1>Meals list</h1>
         
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Carbohydrates</th>
-                        <th>Bolus</th>
-                        <th>Actions</th>
+                        <th>{{ 'Carbohydrates'|trans|capitalize}}</th>
+                        <th>{{ 'Bolus'|trans|capitalize}}</th>
+                        <th>{{ 'Actions'|trans|capitalize}}</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for meal in meals %}
                     <tr>
-                        <td><a href="{{ path('meal_show', { 'id': meal.id }) }}">{{ meal.id }}</a></td>
                         <td>{{ meal.carbohydrate }}</td>
                         <td>{{ meal.estimatedMealBolus }}</td>
                         <td>

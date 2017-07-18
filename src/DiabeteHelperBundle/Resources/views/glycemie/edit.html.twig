@@ -7,7 +7,7 @@
 {% block breadcrumb %}
     {{ parent() }}
     <li><a href="{{ path('glycemie_index') }}">{{ 'blood Sugar'|trans|capitalize }}</a></li>
-    <li><a href="{{ path('glycemie_new') }}">{{ 'change blood sugar'|trans|capitalize }}</a></li>
+    <li><a href="{{ path('glycemie_edit', { 'idGlycemie': glycemie.idGlycemie }) }}">{{ 'change blood sugar'|trans|capitalize }}</a></li>
 {% endblock breadcrumb %}
 
 {% block body %}

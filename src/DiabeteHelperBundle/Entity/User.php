@@ -91,6 +91,10 @@ class User extends BaseUser {
    * @var string
    */
   private $glycemicObjective;
+  /**
+    * @var string
+    */
+    private $carbsInsulinRatio;
 
   public function __construct() {
     parent::__construct();
