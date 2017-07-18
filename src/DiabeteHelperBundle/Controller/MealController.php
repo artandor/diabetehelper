@@ -131,6 +131,7 @@ class MealController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $meal->setEstimatedMealBolus();
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('meal_show', array('id' => $meal->getId()));

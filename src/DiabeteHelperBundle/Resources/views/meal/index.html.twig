@@ -13,9 +13,12 @@
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <h1>Meals list</h1>
         
+             <a class="btn btn-success" href="{{ path('meal_new') }}">{{ 'add a new meal'|trans|capitalize }}</a>
+        
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>{{ 'date/hour of'|trans|capitalize }}<br/>{{ 'the meal'|trans }}</th>
                         <th>{{ 'Carbohydrates'|trans|capitalize}}</th>
                         <th>{{ 'Bolus'|trans|capitalize}}</th>
                         <th>{{ 'Actions'|trans|capitalize}}</th>
@@ -24,28 +27,20 @@
                 <tbody>
                 {% for meal in meals %}
                     <tr>
+                        <td>{% if meal.dateMeal %}{{ meal.dateMeal|date('H:i') }}
+                                <br/>{{ meal.dateMeal|date('d/M/y') }}{% endif %}</td>
                         <td>{{ meal.carbohydrate }}</td>
-                        <td>{{ meal.estimatedMealBolus }}</td>
-                        <td>
-                            <ul>
-                                <li>
-                                    <a href="{{ path('meal_show', { 'id': meal.id }) }}">show</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('meal_edit', { 'id': meal.id }) }}">edit</a>
-                                </li>
-                            </ul>
+                        <td>{% if meal.estimatedMealBolus %}{{ meal.estimatedMealBolus }} {{ 'Insulin Units'|trans }}{% endif %}</td>
+                        <td class="btn-group-vertical" role="group" aria-label="...">
+                            <a class="btn btn-default"
+                               href="{{ path('meal_show', { 'id': meal.id }) }}">{{ 'show'|trans|capitalize }}</a>
+                            <a class="btn btn-default"
+                               href="{{ path('meal_edit', { 'id': meal.id }) }}">{{ 'modify'|trans|capitalize }}</a>
                         </td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
-        
-            <ul>
-                <li>
-                    <a href="{{ path('meal_new') }}">Create a new meal</a>
-                </li>
-            </ul>
         {% else %}
             {{ 'you must be connected to access your meals or add one.'|trans|capitalize }}
             <p><a href="{{ path('fos_user_security_login') }}">{{ 'go to login page'|trans|capitalize }}</a></p>
