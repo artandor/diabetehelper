@@ -1,3 +1,4 @@
+/*Big blocks*/
 header {
     /*Design Menu*/
     width: 80%;
@@ -17,23 +18,35 @@ body {
     padding: 1%;
 }
 
+
+/* Titles */
+
+h1{
+    font-size: 30px;
+}
+
+h2{
+    font-size: 27px;
+}
+
+/* Forms */
 .form-control {
     width: 40%;
 }
 
-table, th {
-    text-align: center;
-}
+/* Modals */
 
 .modal-backdrop {
     z-index: -10000;
 }
 
-.degrade {
-    background: -webkit-gradient(linear, left top, left bottom, from(#cb0009), to(#02b421));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Others */
+
+table, th {
+    text-align: center;
 }
+
+
 
 .alert{
     margin: 20px 0;
@@ -42,3 +55,12 @@ table, th {
 ol .close{
     float: none;
 }
+
+/* Custom */
+
+.degrade {
+    background: -webkit-gradient(linear, left top, left bottom, from(#cb0009), to(#02b421));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+

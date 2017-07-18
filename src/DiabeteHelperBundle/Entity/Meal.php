@@ -120,7 +120,7 @@ class Meal
             }
             $this->estimatedMealBolus = $estimatedMealBolus;
         } else {
-            throw new \Symfony\Component\HttpKernel\Exception\HttpException(428, 'You did not set up your ratios.');
+            throw new \Symfony\Component\HttpKernel\Exception\HttpException(428, 'Carbs/Insulin Ratio');
         }
         return $this;
     }
