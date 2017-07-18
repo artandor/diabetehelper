@@ -18,7 +18,6 @@ jQuery(document).ready(function ($) {
             });
     
             allData = JSON.stringify(allData);
-            console.log(allData);
             field.val(allData);
     }
     
@@ -91,6 +90,7 @@ jQuery(document).ready(function ($) {
     $('body').delegate('#dates li .remove', 'click', function(){
         $(this).parent().remove();
         refreshFormRatio(form);
+        addRemoveButtonAfter($('ol#dates.with-form li:last-child'));
         insertJsonIntoHiddenField($('#dates'), 'li', $('#' + form.parents('form').attr('name') + '_carbsInsulinRatio'));
     });
 /* End Form carbs/Insulin ratios */
