@@ -104,11 +104,13 @@ class Meal
      * @return Meal
      * @throws \Exception
      */
-    public function setEstimatedMealBolus()
+    public function setEstimatedMealBolus(User $user = null)
     {
-        $user = $this->getIduser();
+        if($user === null){
+            $user = $this->getIduser();
+        }
 
-        $ratios = json_decode($user->getCarbsInsulinRatio());
+        $ratios = !$user->getCarbsInsulinRatio() ? null : json_decode($user->getCarbsInsulinRatio());
 
         if ($ratios !== null) {
             $time = $this->getDateMeal()->format('H:i');

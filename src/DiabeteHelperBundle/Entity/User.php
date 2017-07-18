@@ -277,36 +277,6 @@ class User extends BaseUser {
      */
     private $glucidInsulinRatio;
 
-
-    /**
-     * Set glucidInsulinRatio
-     *
-     * @param string $glucidInsulinRatio
-     *
-     * @return User
-     */
-    public function setGlucidInsulinRatio($glucidInsulinRatio)
-    {
-        $this->glucidInsulinRatio = $glucidInsulinRatio;
-
-        return $this;
-    }
-
-    /**
-     * Get glucidInsulinRatio
-     *
-     * @return string
-     */
-    public function getGlucidInsulinRatio()
-    {
-        return $this->glucidInsulinRatio;
-    }
-    /**
-     * @var string
-     */
-    private $carbsInsulinRatio;
-
-
     /**
      * Set carbsInsulinRatio
      *
@@ -314,7 +284,7 @@ class User extends BaseUser {
      *
      * @return User
      */
-    public function setCarbsInsulinRatio($carbsInsulinRatio)
+    public function setCarbsInsulinRatio($carbsInsulinRatio = null)
     {
         $this->carbsInsulinRatio = $carbsInsulinRatio;
 
