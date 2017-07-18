@@ -43,7 +43,6 @@ class StatistiquesController extends Controller
         $renderParams['glycemies'] = $glycemies;
 
         if (isset($lineChart)) $renderParams['linechart'] = $lineChart;
-        //dump($lineChart);
         return $this->render(
             'DiabeteHelperBundle:statistiques:index.html.twig', $renderParams);
     }
@@ -107,13 +106,10 @@ class StatistiquesController extends Controller
                 $moyennes[$glycemie->getDateGlycemie()->format('d/M')]['coef']++;
             }
         }
-        dump($moyennes);
-        dump($destinationDatas);
 
         foreach ($moyennes as $date => $taux) {
             $destinationDatas[$date][0] = $date;
             $destinationDatas[$date][1] = (float)$taux['tauxGlycemie'];
-            dump($destinationDatas);
         }
     }
 
