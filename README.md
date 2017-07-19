@@ -1,7 +1,7 @@
 DiabeteHelper - STOPPED 19/07/2017
 =========
 
-The developpement of this app has stopped, considering there is an app doing everything i wanted to include in my website, i think there is no point in continuing developpement of this app.
+The developpement of this app has stopped, considering there is an app (diabete:m) doing everything i wanted to include in my website, i think there is no point in continuing developpement of this app. If you want to know more, or use this code, please contact me for more informations :) I'd be happy to help
 Last developpement 17/07/2017
 
 A Symfony project created on March, 2016.
