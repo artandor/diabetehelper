@@ -6,3 +6,5 @@ Lancer tests
 vendor/bin/phpunit
 Lancer tests avec une checklist
 vendor/bin/phpunit --testdox
+
+git pull && php bin/console d:s:u --force && php bin/console ca:cl && php bin/console ca:cl -e=prod && vendor/bin/phpunit --testdox
