@@ -73,4 +73,11 @@ DiabeteHelperBundle\Entity\User:
             options:
                 default: null
             column: dateInscription
+        carbsInsulinRatio:
+            type: string
+            nullable: true
+            options:
+                default: null
+            length: 400
+            column: carbsInsulinRatio
     lifecycleCallbacks: {  }

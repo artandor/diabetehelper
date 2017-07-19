@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class RegistrationType extends AbstractType
@@ -100,7 +101,15 @@ class RegistrationType extends AbstractType
                 'typeTraitement',
                 TextType::class,
                 array('label' => 'What traitements do you take')
-            );
+            )
+            ->add(
+                'carbsInsulinRatio',
+                HiddenType::class,
+                array(
+                    'required' => false
+                )
+            )
+            ;
     }
 
     public function getParent()

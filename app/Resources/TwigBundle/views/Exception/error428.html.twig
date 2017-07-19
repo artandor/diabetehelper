@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ 'An Error Occurred:'|trans }} {{ status_text }}
+{% endblock title %}
+
+{% block body %}
+    <h1>{{status_text}}</h1> 
+
+    <div>
+        
+    </div>
+    <div>
+        <h2 class="h3">{{'Following datas are missing : '|trans}}</h2>
+        <p class="alert alert-danger">{{exception.message}}</p>
+        <p>{{ 'Please fill your user profile to continue.'|trans}}</p>
+    </div>
+{% endblock body %}

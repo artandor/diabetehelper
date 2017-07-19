@@ -181,15 +181,14 @@ class Glycemie {
 
   /**
    * Set estimatedCorrectionBolus
-   *
-   * @param \DiabeteHelperBundle\Entity\User $user
-   *
+   * 
    * @return \DiabeteHelperBundle\Entity\Glycemie
    */
-  public function setEstimatedCorrectionBolus(User $user = NULL) {
-    if ($user == NULL) {
+  public function setEstimatedCorrectionBolus(User $user = null) {
+    if($user === null){
       $user = $this->getIduser();
     }
+    
     if ($user->getGlycemicObjective() && $user->getInsulinSensivity()) {
       if ($this->getTauxGlycemie() - $user->getGlycemicObjective() >= 0) {
         $estimatedCorrectionBolus = ($this->getTauxGlycemie(

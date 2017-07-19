@@ -1,0 +1,42 @@
+{% extends 'DiabeteHelperBundle::layout.html.twig' %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('meal_index') }}">{{ 'meals'|trans|capitalize }}</a></li>
+    <li><a href="{{ path('meal_show', { 'id': meal.id }) }}">{{ 'show meal'|trans|capitalize }}</a></li>
+{% endblock breadcrumb %}
+
+{% block title %}
+    {{ 'show meal'|trans|capitalize }} {{ parent() }}
+{% endblock title %}
+
+{% block body %}
+    <h1>Meal</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ meal.id }}</td>
+            </tr>
+            <tr>
+                <th>Carbohydrates</th>
+                <td>{{ meal.carbohydrates }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('meal_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('meal_edit', { 'id': meal.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

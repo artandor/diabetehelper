@@ -28,5 +28,19 @@
     {{ 'insulin sensivity'|trans|capitalize }} : {{ user.insulinSensivity }}<br/>
     {{ 'glycemic objective for corrections'|trans|capitalize }} : {{ user.glycemicObjective }}
     </p>
+    
+    <div class="well">
+        <h3>{{ 'glucid/insulin ratios'|trans|capitalize }}</h3>
+        <ol id="dates">
+            {% set carbsInsulinRatio = app.user.carbsInsulinRatio|json_decode %}
+            {% for ratio in carbsInsulinRatio %}
+                <li data-hourStart="{{ ratio.hourstart }}"
+                    data-hourEnd="{{ ratio.hourend }}" data-ratio="{{ ratio.ratio }}">
+                    Heure start : {{ ratio.hourstart }} / heure end : {{ ratio.hourend }} /
+                    ratio : {{ ratio.ratio }}
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
 {% endblock fos_user_content %}
 

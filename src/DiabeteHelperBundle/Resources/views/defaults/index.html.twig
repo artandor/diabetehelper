@@ -13,6 +13,10 @@
     {{ parent() }}
 {% endblock breadcrumb %}
 
+{% block statusMessages %}
+    <noscript><div class="alert alert-danger">{{ 'This website depends on javascript to secure both your datas and the information we give to you. Please enable javascript in your browser.'|trans }}</div></noscript>
+{% endblock statusMessages %}
+
 {% block body %}
     <div>
         <p class="bg-danger">{{ 'This website is under active developpement, you can test it but datas are not guaranteed to be secured yet. Anything you store here belong to me in the developpement phase.'|trans }}</p>

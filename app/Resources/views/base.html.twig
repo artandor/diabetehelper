@@ -4,6 +4,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" xml:lang="{{ app.request.getLocale() }}" content="application/xhtml+xml; charset=utf-8"/>
+    {# Redirect user if javascript is disabled #}
+    
+    {# break the site if no JS #}
+    {% if app.request.attributes.get('_route') != 'diabete_helper_homepage' %}
+        <noscript><meta http-equiv="refresh"content="0; url={{ path('diabete_helper_homepage') }}"></noscript>
+    {% endif %}
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}"/>
 
     <link type="text/plain" rel="author" href="{{ url('diabete_helper_homepage') }}humans.txt"/>
@@ -24,8 +30,8 @@
 
     <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/scripts_persos.js') }}"></script>
     <!--END IMPORT BOOTSTRAP & JQUERY -->
+    <script type="text/javascript" src="{{ asset('js/scripts_persos.js') }}"></script>
 
 
     <title>{% block title %}{% endblock %}</title>
@@ -61,11 +67,16 @@
                             <li><a href="{{ path('glycemie_index') }}"><span class="glyphicon glyphicon-tint"></span>
                                     {{ 'glycemias'|trans|capitalize }}</a></li>
                         {% endif %}
+                        {% if app.request.attributes.get('_route') == 'meal_index' %}
+                            <li class="active"><a href="{{ path('meal_index') }}"><span
+                                            class="glyphicon glyphicon-glass"></span> {{ 'meals'|trans|capitalize }}<span class="sr-only">(current)</span></a>
+                            </li>
+                        {% else %}
+                            <li><a href="{{ path('meal_index') }}"><span class="glyphicon glyphicon-glass"></span>{{ 'meals'|trans|capitalize }}</a></li>
+                        {% endif %}
                         {% if app.request.attributes.get('_route') == 'statistiques' %}
                             <li class="active"><a href="{{ path('statistiques') }}"><span
-                                            class="glyphicon glyphicon-stats"></span> {{ 'statistics'|trans|capitalize }}
-                                    <span
-                                            class="sr-only">(current)</span></a></li>
+                                            class="glyphicon glyphicon-stats"></span> {{ 'statistics'|trans|capitalize }}<span class="sr-only">(current)</span></a></li>
                         {% else %}
                             <li><a href="{{ path('statistiques') }}"><span class="glyphicon glyphicon-stats"></span>
                                     {{ 'statistics'|trans|capitalize }}</a></li>
@@ -97,6 +108,9 @@
                                     #}
                                     <li>
                                         <a href="{{ path('glycemie_new') }}">{{ 'add a new glycemia'|trans|capitalize }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('meal_new') }}">{{ 'add a new meal'|trans|capitalize }}</a>
                                     </li>
                                     {#
                                     <li role="separator" class="divider"></li>
@@ -154,6 +168,9 @@
     {% block breadcrumb %}
     {% endblock breadcrumb %}
     </ol>
+
+    {% block statusMessages %}
+    {% endblock statusMessages %}
 
     {% block body %}
     {% endblock body %}

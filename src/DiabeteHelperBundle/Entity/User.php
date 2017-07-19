@@ -91,6 +91,10 @@ class User extends BaseUser {
    * @var string
    */
   private $glycemicObjective;
+  /**
+    * @var string
+    */
+    private $carbsInsulinRatio;
 
   public function __construct() {
     parent::__construct();
@@ -125,14 +129,14 @@ class User extends BaseUser {
   }
 
   /**
-   * @return int
+   * @return \DateTime
    */
   public function getYearOfBirth() {
     return $this->yearofbirth;
   }
 
   /**
-   * @param int $yearofbirth
+   * @param \DateTime $yearofbirth
    */
   public function setYearOfBirth($yearofbirth) {
     $this->yearofbirth = $yearofbirth;
@@ -272,4 +276,32 @@ class User extends BaseUser {
 
     return $this;
   }
+    /**
+     * @var string
+     */
+    private $glucidInsulinRatio;
+
+    /**
+     * Set carbsInsulinRatio
+     *
+     * @param string $carbsInsulinRatio
+     *
+     * @return User
+     */
+    public function setCarbsInsulinRatio($carbsInsulinRatio = null)
+    {
+        $this->carbsInsulinRatio = $carbsInsulinRatio;
+
+        return $this;
+    }
+
+    /**
+     * Get carbsInsulinRatio
+     *
+     * @return string
+     */
+    public function getCarbsInsulinRatio()
+    {
+        return $this->carbsInsulinRatio;
+    }
 }
